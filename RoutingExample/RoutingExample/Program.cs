@@ -52,7 +52,7 @@ app.UseEndpoints(endpoints =>
         DateTime reportDate = Convert.ToDateTime(context.Request.RouteValues["reportdate"]);
         await context.Response.WriteAsync($"In daily-digest-report - {reportDate.ToShortDateString()}");
     });
-
+    //cities/cityid
     endpoints.Map("cities/{cityid:guid}", async context =>
     {
         Guid cityId = Guid.Parse(Convert.ToString(context.Request.RouteValues["cityid"])!);
@@ -66,6 +66,13 @@ app.UseEndpoints(endpoints =>
         string? month = Convert.ToString(context.Request.RouteValues["month"]);
 
         await context.Response.WriteAsync($"sales report aer {year} {month}");
+    });
+
+    //sales-report/2024/jan
+    //This one is prefered route since it is more specific
+    endpoints.Map("sales-report/2024/jan", async context =>
+    {
+        await context.Response.WriteAsync("Sales reports exclusively for 2024 january");
     });
 });
 
