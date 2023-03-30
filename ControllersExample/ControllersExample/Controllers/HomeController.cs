@@ -45,7 +45,7 @@ namespace ControllersExample.Controllers // NameOfPrject.Folder
         }
 
         [Route("file-download3")]
-        public FileContentResult FileDownload3()
+        public IActionResult FileDownload3()
         {
             byte[] bytes = System.IO.File.ReadAllBytes(@"D:\Cesar\Udemy\Projects&examples\multimedia\docs.pdf"); // to fetch from the database
             //Better this way
