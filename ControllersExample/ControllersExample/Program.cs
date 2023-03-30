@@ -3,6 +3,7 @@ builder.Services.AddControllers(); // This method AddControllers will get all th
 //builder.Services.AddTransient<HomeController>(); // This is used for smaller projects
 // Above the builder.build is a good place to create any service method
 var app = builder.Build();
+app.UseStaticFiles(); // thi is necessary to send file as response
 /*THIS IS THE LONG WAY TO DO IT*/
 //app.UseRouting();
 //app.UseEndpoints(endpoints =>

@@ -21,15 +21,36 @@ namespace ControllersExample.Controllers // NameOfPrject.Folder
         public JsonResult Person() 
         {
             Person person = new Person() { guid = Guid.NewGuid(), Firstname = "Cesar", Lastname="Guerrero", age=32 };
-            return new JsonResult(person);
+            return Json(person); // This is the shortest and best way to return a json
+            //return new JsonResult(person); other way to return json
             //Instead of returning the long and confusion statement is better do it as above.
             //return "{\"key\" : \"value\"}"; //The reasonto put these "\" is because the other comillas are out of the brackets will no recognize the comillas inside
         }
 
-        [Route("Contact-us/{mobile:regex(^\\d{{10}}$)}")] // This is to handle phones only get 10 digits double corchete and slash, because it need to be taken as the regular expression
-        public string Contact() 
+        [Route("file-download")] 
+        public VirtualFileResult FileDownload() 
         {
-            return "Hello from Contact";
+            //return new VirtualFileResult("/sample.pdf", "application/pdf"); //use this when on wwroot
+            //Better this way
+            return File("/sample.pdf", "application/pdf"); //use this when on wwroot
+
+        }
+
+        [Route("file-download2")]
+        public PhysicalFileResult FileDownload2()
+        {
+            //return new PhysicalFileResult(@"D:\Cesar\Udemy\Projects&examples\multimedia\docs.pdf", "application/pdf"); //use this outside wwroot
+            //Better this way
+            return PhysicalFile(@"D:\Cesar\Udemy\Projects&examples\multimedia\docs.pdf", "application/pdf"); //use this outside wwroot
+        }
+
+        [Route("file-download3")]
+        public FileContentResult FileDownload3()
+        {
+            byte[] bytes = System.IO.File.ReadAllBytes(@"D:\Cesar\Udemy\Projects&examples\multimedia\docs.pdf"); // to fetch from the database
+            //Better this way
+            return File(bytes, "application/pdf");
+            //return new FileContentResult(bytes, "application/pdf");
         }
     }
 }

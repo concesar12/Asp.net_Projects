@@ -19,3 +19,4 @@ D:\Cesar\Udemy\Projects&examples\ControllersExample\ControllersExample\obj\Debug
 D:\Cesar\Udemy\Projects&examples\ControllersExample\ControllersExample\obj\Debug\net6.0\ref\ControllersExample.dll
 D:\Cesar\Udemy\Projects&examples\ControllersExample\ControllersExample\obj\Debug\net6.0\ControllersExample.pdb
 D:\Cesar\Udemy\Projects&examples\ControllersExample\ControllersExample\obj\Debug\net6.0\ControllersExample.genruntimeconfig.cache
+D:\Cesar\Udemy\Projects&examples\ControllersExample\ControllersExample\bin\Debug\net6.0\ControllersExample.staticwebassets.runtime.json

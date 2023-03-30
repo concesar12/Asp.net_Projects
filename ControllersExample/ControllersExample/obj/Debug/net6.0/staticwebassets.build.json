@@ -1,11 +1,37 @@
 {
   "Version": 1,
-  "Hash": "nJr+0Dau8qncgColkVxZTeNLsuQBFN3zihOzO2IwmRU=",
+  "Hash": "R4MdrXAV8KNWLvvAGR2rYaK86Clx1+jTD7wr/HKq6bQ=",
   "Source": "ControllersExample",
   "BasePath": "_content/ControllersExample",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "ControllersExample\\wwwroot",
+      "Source": "ControllersExample",
+      "ContentRoot": "D:\\Cesar\\Udemy\\Projects&examples\\ControllersExample\\ControllersExample\\wwwroot\\",
+      "BasePath": "_content/ControllersExample",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\Cesar\\Udemy\\Projects&examples\\ControllersExample\\ControllersExample\\wwwroot\\Sample.pdf",
+      "SourceId": "ControllersExample",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Cesar\\Udemy\\Projects&examples\\ControllersExample\\ControllersExample\\wwwroot\\",
+      "BasePath": "_content/ControllersExample",
+      "RelativePath": "Sample.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Sample.pdf"
+    }
+  ]
 }
