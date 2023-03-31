@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using IActionResultExample.Models;
 
 namespace IActionResultExample.Controllers
 {
@@ -6,7 +7,7 @@ namespace IActionResultExample.Controllers
     {
         [Route("bookstore/{bookid?}/{isloggedin?}")]
         //Url: /bookstore?bookid=5&isloggedin=true
-        public IActionResult Index([FromRoute]int? bookId, [FromRoute]bool? isloggedin)
+        public IActionResult Index([FromQuery]int? bookId, [FromRoute]bool? isloggedin, Book book)
         {
             //Book id should be supplied
             if(bookId.HasValue == false) // Then we can use instead
@@ -57,7 +58,7 @@ namespace IActionResultExample.Controllers
             //Shortcut
             //return LocalRedirectPermanent($"store/books/{bookId}");
 
-            return Content($"Book id: {bookId}"); // This will just show this info sendind as a reponse what is inside
+            return Content($"Book id: {bookId}, Book: { book }", "text/plain"); // This will just show this info sendind as a reponse what is inside
         }
     }
 }
