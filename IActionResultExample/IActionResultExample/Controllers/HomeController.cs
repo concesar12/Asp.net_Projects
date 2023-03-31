@@ -50,7 +50,24 @@ namespace IActionResultExample.Controllers
                 return StatusCode(401); // in order to use the status code
             }
 
-            return new RedirectToActionResult("Books", "Store", new { });
+            //return new RedirectToActionResult("Books", "Store", new { }); //302 Found
+            //There is another way to do this that is: 
+            //return RedirectToAction("Books", "Store", new { id=bookid } /*Route parameter*/);
+            //Alternatively this can be used: 
+            //return new RedirectToActionResult("Books", "Store", new { }, permanent: true); //301 - Moved Permanently // instead of parameter can be only true
+            //This is the short way to have it permanentely removed 301
+            //return RedirectToActionPermanent("Books", "Store", new { id = bookid });
+
+            //return new LocalRedirectResult($"store/books/{ bookid }"); // Better for internal url
+            //There is a shortcut for this
+            //return LocalRedirect($"store/books/{ bookid }"); //302 Found by default
+
+            //return new LocalRedirectResult($"store/books/{ bookid }", true); //301 Moved permanentely
+            //Shortcut
+            return LocalRedirectPermanent($"store/books/{bookid}");
+
+
+
 
         }
     }
