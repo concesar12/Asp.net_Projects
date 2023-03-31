@@ -4,37 +4,36 @@ namespace IActionResultExample.Controllers
 {
     public class HomeController : Controller
     {
-        [Route("bookstore")]
+        [Route("bookstore/{bookid?}/{isloggedin?}")]
         //Url: /bookstore?bookid=5&isloggedin=true
-        public IActionResult Index()
+        public IActionResult Index(int? bookId, bool? isloggedin)
         {
             //Book id should be supplied
-            if(!Request.Query.ContainsKey("bookid"))
+            if(bookId.HasValue == false) // Then we can use instead
             {
                 //Instead of writing all of this:
                 //Response.StatusCode = 400;
                 //return Content("Book id is not supplied");
                 //And instead of this down:
                 //return new BadRequestResult();
-                return BadRequest("Book id is not supplied");
+                return BadRequest("Book id is not supplied or empty");
             }
-            //Book id can't be empty
-            if (string.IsNullOrEmpty(Convert.ToString(Request.Query["bookid"])))
+            //Book id can't be less than or equal to 0
+            if (bookId <= 0)
             {
                 //Response.StatusCode = 400;
                 //return Content("Book id can't be null or empty");
-                return BadRequest("Book id can't be null or empty");
+                return BadRequest("Book id can't be less or equal to 0");
 
             }
             //Book id should be between 1 to 1000
-            int bookid = Convert.ToInt16(ControllerContext.HttpContext.Request.Query["bookid"]); // this is the best actual way get request
-            if(bookid <= 0)
+            if(bookId <= 0)
             {
                 //Response.StatusCode = 400;
                 //return Content("Book id can't be less then or equal to zero");
                 return BadRequest("Book id can't be less then or equal to zero");
             }
-            if (bookid > 1000)
+            if (bookId > 1000)
             {
                 //Response.StatusCode = 400;
                 //return Content("Book id can't be greater than 1000");
@@ -42,7 +41,7 @@ namespace IActionResultExample.Controllers
             }
 
             //is logged in should be true
-            if (Convert.ToBoolean(Request.Query["isloggedin"]) == false)
+            if (isloggedin == false)
             {
                 //Response.StatusCode = 401;
                 //return Content("User must be authenticated");
@@ -64,11 +63,9 @@ namespace IActionResultExample.Controllers
 
             //return new LocalRedirectResult($"store/books/{ bookid }", true); //301 Moved permanentely
             //Shortcut
-            return LocalRedirectPermanent($"store/books/{bookid}");
+            //return LocalRedirectPermanent($"store/books/{bookId}");
 
-
-
-
+            return Content($"Book id: {bookId}"); // This will just show this info sendind as a reponse what is inside
         }
     }
 }
