@@ -6,7 +6,7 @@ namespace IActionResultExample.Controllers
     {
         [Route("bookstore/{bookid?}/{isloggedin?}")]
         //Url: /bookstore?bookid=5&isloggedin=true
-        public IActionResult Index(int? bookId, bool? isloggedin)
+        public IActionResult Index([FromRoute]int? bookId, [FromRoute]bool? isloggedin)
         {
             //Book id should be supplied
             if(bookId.HasValue == false) // Then we can use instead
@@ -17,14 +17,6 @@ namespace IActionResultExample.Controllers
                 //And instead of this down:
                 //return new BadRequestResult();
                 return BadRequest("Book id is not supplied or empty");
-            }
-            //Book id can't be less than or equal to 0
-            if (bookId <= 0)
-            {
-                //Response.StatusCode = 400;
-                //return Content("Book id can't be null or empty");
-                return BadRequest("Book id can't be less or equal to 0");
-
             }
             //Book id should be between 1 to 1000
             if(bookId <= 0)
