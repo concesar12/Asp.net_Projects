@@ -4,7 +4,8 @@ namespace IActionResultExample.Controllers
 {
     public class HomeController : Controller
     {
-        [Route("book")]
+        [Route("bookstore")]
+        //Url: /bookstore?bookid=5&isloggedin=true
         public IActionResult Index()
         {
             //Book id should be supplied
@@ -49,7 +50,7 @@ namespace IActionResultExample.Controllers
                 return StatusCode(401); // in order to use the status code
             }
 
-            return File("/sample.pdf", "application/pdf");
+            return new RedirectToActionResult("Books", "Store", new { });
 
         }
     }
