@@ -4,7 +4,7 @@ namespace IActionResultExample.Models
 { //This is a class to be used to be passed as parameter
     public class Book
     {
-        [FromQuery] // this will only pick the value for bookid from the query string
+        //[FromQuery] // this will only pick the value for bookid from the query string
         public int? BookId { get; set; }
         public string? Author { get; set; }
 

@@ -19,3 +19,4 @@ D:\Cesar\Udemy\Projects&examples\IActionResultExample\IActionResultExample\obj\D
 D:\Cesar\Udemy\Projects&examples\IActionResultExample\IActionResultExample\obj\Debug\net6.0\ref\IActionResultExample.dll
 D:\Cesar\Udemy\Projects&examples\IActionResultExample\IActionResultExample\obj\Debug\net6.0\IActionResultExample.pdb
 D:\Cesar\Udemy\Projects&examples\IActionResultExample\IActionResultExample\obj\Debug\net6.0\IActionResultExample.genruntimeconfig.cache
+D:\Cesar\Udemy\Projects&examples\IActionResultExample\IActionResultExample\bin\Debug\net6.0\IActionResultExample.staticwebassets.runtime.json
