@@ -7,7 +7,8 @@ namespace ModelValidationsExample.Controllers
     {
         //[Bind(nameof(Person.PersonName), nameof(Person.Email), nameof(Person.Password), nameof(Person.ConfirmPassword))]Person person
         [Route("register")]
-        public IActionResult Index(Person person) // Using binding to select the thigs that will be passed in the response
+        //[fromBody] this allows to use json or xml in the body to receive the values
+        public IActionResult Index([FromBody]Person person) // Using binding to select the thigs that will be passed in the response
         {
             if (!ModelState.IsValid) // This propperty will check the status of the attributes in the model
             {
