@@ -12,15 +12,18 @@ namespace ModelValidationsExample.Models
         [StringLength(40, MinimumLength = 3, ErrorMessage = "{0} should be between {2} and {1} characters long")] // this is used to specify the length 1= 40, 2 = 3 from the values
         [RegularExpression("^[A-Za-z .]*$", ErrorMessage = "{0} should contain only alphabets space and a dot")] // This is to accept names with only letters
         public string? PersonName { get; set; }
+        
         [EmailAddress(ErrorMessage = "{0} should be a normal email address example@example.com")]
         [Required(ErrorMessage = "{0} is mandatory")]
         public string? Email { get; set; }
+        
         [Phone(ErrorMessage = "{0} should be a phone number")]
         //[ValidateNever] // When this is used then the property will not be validated
         public string? Phone { get; set; }
 
         [Required(ErrorMessage = "{0} can't be blank")]
         public string? Password { get; set; }
+        
         [Required(ErrorMessage = "{0} can't be blank")]
         [Compare("Password", ErrorMessage = "{0} and {1} do not match")]
         [Display(Name = "Re-enter Password")]
