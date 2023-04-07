@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "gsUDjXUJN8A5YgomhTyj998jwgxRBmwU5J4u1atcNGA=",
+  "Source": "ViewsExample",
+  "BasePath": "_content/ViewsExample",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ViewsExample\\wwwroot",
+      "Source": "ViewsExample",
+      "ContentRoot": "D:\\Cesar\\Udemy\\Projects&examples\\ViewsExample\\ViewsExample\\wwwroot\\",
+      "BasePath": "_content/ViewsExample",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

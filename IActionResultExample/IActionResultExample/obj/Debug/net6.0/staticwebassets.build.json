@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "vnfQxeVX8JhTMa9gvzxRsfKW19UjmV2FqgJ7OxDatp4=",
+  "Source": "IActionResultExample",
+  "BasePath": "_content/IActionResultExample",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "IActionResultExample\\wwwroot",
+      "Source": "IActionResultExample",
+      "ContentRoot": "D:\\Cesar\\Udemy\\Projects&examples\\IActionResultExample\\IActionResultExample\\wwwroot\\",
+      "BasePath": "_content/IActionResultExample",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

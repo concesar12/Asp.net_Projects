@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "pL84id/e2VjSmuMRgOetIwivzSNQkhkIOaaaTrL8WHg=",
+  "Source": "StaticFilesExample",
+  "BasePath": "_content/StaticFilesExample",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "StaticFilesExample\\wwwroot",
+      "Source": "StaticFilesExample",
+      "ContentRoot": "D:\\Cesar\\Udemy\\Projects&examples\\StaticFilesExample\\StaticFilesExample\\wwwroot\\",
+      "BasePath": "_content/StaticFilesExample",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}
