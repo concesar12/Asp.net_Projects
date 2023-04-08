@@ -2,7 +2,7 @@
 @*Inside of the curly braces I can write any C# valid code*@
 @{
     string appTitle = "Asp.Net Core Demo App";
-    Person person = new Person() { Name = "John", DateOfBirth = null /*Convert.ToDateTime("1993-07-01")*/ };
+    Person person = new Person() { Name = "John", DateOfBirth = null, PersonGender = Gender.Male /*Convert.ToDateTime("1993-07-01")*/ };
 }
 
 <!DOCTYPE html>
@@ -22,6 +22,26 @@
     else
     {
         <h3>Date of birth is unknown</h3>
+    }
+
+    @switch(person.PersonGender)
+    {
+        case Gender.Male:
+            <p>November 19 is International Men's Day</p>
+            ;
+            break;
+        case Gender.Female:
+            <p>March 8 is International Women's Day</p>
+            ;
+            break;
+        case Gender.Other:
+            <p>No register of your day</p>
+            ;
+            break;
+        default:
+            <p>No gender provided</p>
+            ;
+            break;
     }
 </body>
 </html>
