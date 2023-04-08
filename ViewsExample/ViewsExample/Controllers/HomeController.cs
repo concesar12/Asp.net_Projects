@@ -18,8 +18,8 @@ namespace ViewsExample.Controllers
 
             };
             //ViewData["people"] = people;
-            ViewBag.people = people;
-            return View(); //Views/Home/Index.cshtml
+            //ViewBag.people = people;
+            return View(people); //Views/Home/Index.cshtml // The argument people is provided only when @model added in the view
             //return View("abc"); // abc.cshtml
             //return new ViewResult() { ViewName = "abc" }; this is the long way to very used in the real projects
 
