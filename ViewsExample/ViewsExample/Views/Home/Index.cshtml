@@ -2,7 +2,7 @@
 @*Inside of the curly braces I can write any C# valid code*@
 @{
     string appTitle = "Asp.Net Core Demo App";
-    Person person = new Person() { Name = "John", DateOfBirth = Convert.ToDateTime("1993-07-01") };
+    Person person = new Person() { Name = "John", DateOfBirth = null /*Convert.ToDateTime("1993-07-01")*/ };
 }
 
 <!DOCTYPE html>
@@ -14,10 +14,14 @@
     <body>
        <h1>Welcome</h1> 
        <h2>Hello @person.Name</h2>
-    @{
-        double age = Math.Round((DateTime.Now - person.DateOfBirth).TotalDays / 365.25);
+    @if (person.DateOfBirth.HasValue)
+    {
+        double age = Math.Round((DateTime.Now - person.DateOfBirth).Value.TotalDays / 365.25);
+        <h3>@age years old</h3>
     }
-    <h3>@age years old</h3>
-
-    </body>
+    else
+    {
+        <h3>Date of birth is unknown</h3>
+    }
+</body>
 </html>
