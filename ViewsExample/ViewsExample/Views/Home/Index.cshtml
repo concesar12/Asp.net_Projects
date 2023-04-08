@@ -12,7 +12,7 @@
     //Person person = new Person() { Name = "John", DateOfBirth = null, PersonGender = Gender.Male /*Convert.ToDateTime("1993-07-01")*/ };
 }
 
-@functions{
+@{
     //local function, but with the prefix functions it becomes a metod 
     double? GetAge(DateTime? dateOfBirth)
     {
@@ -25,7 +25,8 @@
             return null;
         }
     }
-    string Name { get; set; } = "Hello name";
+
+    string alertMessage = $"<script>alert('{people.Count} people found')</script>"; // Javascript code that can be run inside
 }
 
 <!DOCTYPE html>
@@ -35,7 +36,8 @@
         <meta charset="utf-8"/>
     </head>
     <body>
-       <h1>Welcome @Name</h1> @*Name was gotten from function*@
+        @Html.Raw(alertMessage)
+       <h1>Welcome </h1> @*Name was gotten from function*@
     @for (int i = 0; i <2; i++)
     {
         Person person = people[i];
