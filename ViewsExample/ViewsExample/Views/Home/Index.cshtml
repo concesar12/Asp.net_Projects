@@ -20,7 +20,12 @@
     </head>
     <body>
        <h1>Welcome</h1>
-       @foreach (Person person in people)
+    @for (int i = 0; i <2; i++)
+    {
+        Person person = people[i];
+        <div>@person.Name</div>
+    }
+    @foreach (Person person in people)
     {
         <div>
             @person.Name
