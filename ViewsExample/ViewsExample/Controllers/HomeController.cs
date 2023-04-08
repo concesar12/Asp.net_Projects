@@ -17,7 +17,8 @@ namespace ViewsExample.Controllers
                 new Person() { Name = "Laisa", DateOfBirth = DateTime.Parse("2000-11-11"), PersonGender = Gender.Other },
 
             };
-            ViewData["people"] = people;
+            //ViewData["people"] = people;
+            ViewBag.people = people;
             return View(); //Views/Home/Index.cshtml
             //return View("abc"); // abc.cshtml
             //return new ViewResult() { ViewName = "abc" }; this is the long way to very used in the real projects
