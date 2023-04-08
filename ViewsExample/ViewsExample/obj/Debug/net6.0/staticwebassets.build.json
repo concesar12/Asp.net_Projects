@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gsUDjXUJN8A5YgomhTyj998jwgxRBmwU5J4u1atcNGA=",
+  "Hash": "EayXR3UxF3rMF9ifdxNP0pHqPQC7CHUkcN6Hug/f3Ug=",
   "Source": "ViewsExample",
   "BasePath": "_content/ViewsExample",
   "Mode": "Default",
@@ -15,5 +15,23 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "D:\\Cesar\\Udemy\\Projects&examples\\ViewsExample\\ViewsExample\\wwwroot\\StyleSheet.css",
+      "SourceId": "ViewsExample",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Cesar\\Udemy\\Projects&examples\\ViewsExample\\ViewsExample\\wwwroot\\",
+      "BasePath": "_content/ViewsExample",
+      "RelativePath": "StyleSheet.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\StyleSheet.css"
+    }
+  ]
 }

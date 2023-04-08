@@ -8,50 +8,60 @@
     //local function, but with the prefix functions it becomes a metod 
     double? GetAge(DateTime? dateOfBirth)
     {
-        if (dateOfBirth is not null)
-        {
-            return Math.Round((DateTime.Now - dateOfBirth.Value).TotalDays / 365.25);
-        }
-        else
-        {
-            return null;
-        }
+    if (dateOfBirth is not null)
+    {
+    return Math.Round((DateTime.Now - dateOfBirth.Value).TotalDays / 365.25);
+    }
+    else
+    {
+    return null;
+    }
     }
 
     //string alertMessage = $"<script>alert('{people.Count} people found')</script>"; // Javascript code that can be run inside
-}*@
+    }*@
 
 <!DOCTYPE html>
 <html>
     <head>
         <title>@ViewData["appTitle"]</title>
         <meta charset="utf-8"/>
+        <link href="~/StyleSheet.css" rel="stylesheet" /link>
     </head>
     <body>
+        <div class="page-content">
         @*@Html.Raw(alertMessage)*@
-       <h1>Welcome </h1> @*Name was gotten from function*@
-    @{
-        List<Person>? people = (List<Person>?)ViewData["people"]; // this is to cast the list of objects
-    }
+            <h1>Welcome </h1> @*Name was gotten from function*@
+        @{
+            List<Person>? people = (List<Person>?)ViewData["people"]; // this is to cast the list of objects
+        }
 
-    @for (int i = 0; i <2; i++)
-    {
-        Person person = people[i];
-        <text>Hightlights of people</text> // This will be taken as plain text/ this is one way
-        @*@:This is normal text *@
-        <div>@person.Name</div>
-    }
-    @foreach (Person person in people)
-    {
-        <div>
-            @person.Name
-            <span>, </span>
-            <span>@person.PersonGender </span>
-            @if (person.DateOfBirth.HasValue)
-            {
-                <span>@person.DateOfBirth.Value.ToString("MM/dd/yyyy")</span>
-            }
+        @for (int i = 0; i < 2; i++)
+        {
+            Person person = people[i];
+            <text>Hightlights of people</text>
+            // This will be taken as plain text/ this is one way
+            @*@:This is normal text *@
+           <div class  = "box">@person.Name</div>
+        }
+        @foreach (Person person in people)
+        {
+            <div class = "box float-left w-50">
+               <h3>@person.Name</h3> 
+                <table class="table w-100">
+                    <tbody>
+                        <tr>
+                            <td>Gender</td>
+                            <td>@person.PersonGender</td>
+                        </tr>
+                        <tr>
+                            <td>Date of birth</td>
+                            <td>@person.DateOfBirth.Value.ToString("MM/dd/yyyy")</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        }
         </div>
-    }
     </body>
 </html>
