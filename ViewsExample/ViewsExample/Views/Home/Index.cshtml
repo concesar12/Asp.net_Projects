@@ -2,7 +2,14 @@
 @*Inside of the curly braces I can write any C# valid code*@
 @{
     string appTitle = "Asp.Net Core Demo App";
-    Person person = new Person() { Name = "John", DateOfBirth = null, PersonGender = Gender.Male /*Convert.ToDateTime("1993-07-01")*/ };
+    List<Person> people = new List<Person>()
+    {
+        new Person() { Name = "Cesar", DateOfBirth = DateTime.Parse("1993-04-05"), PersonGender = Gender.Male },
+        new Person() { Name = "Marcela", DateOfBirth = DateTime.Parse("1995-06-12"), PersonGender = Gender.Female },
+        new Person() { Name = "Laisa", DateOfBirth = DateTime.Parse("2000-11-11"), PersonGender = Gender.Other },
+
+    };
+    //Person person = new Person() { Name = "John", DateOfBirth = null, PersonGender = Gender.Male /*Convert.ToDateTime("1993-07-01")*/ };
 }
 
 <!DOCTYPE html>
@@ -12,36 +19,19 @@
         <meta charset="utf-8"/>
     </head>
     <body>
-       <h1>Welcome</h1> 
-       <h2>Hello @person.Name</h2>
-    @if (person.DateOfBirth.HasValue)
+       <h1>Welcome</h1>
+       @foreach (Person person in people)
     {
-        double age = Math.Round((DateTime.Now - person.DateOfBirth).Value.TotalDays / 365.25);
-        <h3>@age years old</h3>
+        <div>
+            @person.Name
+            <span>, </span>
+            <span>@person.PersonGender </span>
+            @if (person.DateOfBirth.HasValue)
+            {
+                <span>@person.DateOfBirth.Value.ToString("MM/dd/yyyy")</span>
+            }
+        </div>
     }
-    else
-    {
-        <h3>Date of birth is unknown</h3>
-    }
-
-    @switch(person.PersonGender)
-    {
-        case Gender.Male:
-            <p>November 19 is International Men's Day</p>
-            ;
-            break;
-        case Gender.Female:
-            <p>March 8 is International Women's Day</p>
-            ;
-            break;
-        case Gender.Other:
-            <p>No register of your day</p>
-            ;
-            break;
-        default:
-            <p>No gender provided</p>
-            ;
-            break;
-    }
-</body>
+    
+    </body>
 </html>
