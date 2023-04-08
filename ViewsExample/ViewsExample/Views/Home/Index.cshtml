@@ -12,6 +12,22 @@
     //Person person = new Person() { Name = "John", DateOfBirth = null, PersonGender = Gender.Male /*Convert.ToDateTime("1993-07-01")*/ };
 }
 
+@functions{
+    //local function, but with the prefix functions it becomes a metod 
+    double? GetAge(DateTime? dateOfBirth)
+    {
+        if (dateOfBirth is not null)
+        {
+            return Math.Round((DateTime.Now - dateOfBirth.Value).TotalDays / 365.25);
+        }
+        else
+        {
+            return null;
+        }
+    }
+    string Name { get; set; } = "Hello name";
+}
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,12 +35,12 @@
         <meta charset="utf-8"/>
     </head>
     <body>
-       <h1>Welcome</h1>
+       <h1>Welcome @Name</h1> @*Name was gotten from function*@
     @for (int i = 0; i <2; i++)
     {
         Person person = people[i];
         <text>Hightlights of people</text> // This will be taken as plain text/ this is one way
-        @:This is normal text 
+        @*@:This is normal text *@
         <div>@person.Name</div>
     }
     @foreach (Person person in people)
@@ -36,9 +52,9 @@
             @if (person.DateOfBirth.HasValue)
             {
                 <span>@person.DateOfBirth.Value.ToString("MM/dd/yyyy")</span>
+                <span>@GetAge(person.DateOfBirth) years old</span>
             }
         </div>
     }
-    
     </body>
 </html>
