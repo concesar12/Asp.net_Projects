@@ -31,20 +31,8 @@
     <body>
         <div class="page-content">
         @*@Html.Raw(alertMessage)*@
-            <h1>Welcome </h1> @*Name was gotten from function*@
-        @{
-            List<Person>? people = (List<Person>?)ViewData["people"]; // this is to cast the list of objects necessary with viewData
-        }
-
-        @for (int i = 0; i < 2; i++)
-        {
-            Person person = people[i];
-            <text>Hightlights of people</text>
-            // This will be taken as plain text/ this is one way
-            @*@:This is normal text *@
-           <div class  = "box">@person.Name</div>
-        }
-        @foreach (Person person in ViewBag.people) // Viewbag makes the same as view data but it is not necessary to type cast
+            <h1>Persons </h1> @*Name was gotten from function*@
+        @foreach (Person person in Model) // Viewbag makes the same as view data but it is not necessary to type cast
         {
             <div class = "box float-left w-50">
                <h3>@person.Name</h3> 
@@ -60,8 +48,16 @@
                         </tr>
                     </tbody>
                 </table>
+                <div>
+                    <a href="/person-details/@person.Name">Details</a>
+                </div>
+                
             </div>
         }
+
+        <div>
+            <a href="/person-and-product">Person with Product</a>
+        </div>
         </div>
     </body>
 </html>
