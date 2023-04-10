@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "Z/16718/3w3baX01E8cGW1jFyOK9AUshNlNFLU+pZgM=",
+  "Source": "LayoutViewsExample",
+  "BasePath": "_content/LayoutViewsExample",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "LayoutViewsExample\\wwwroot",
+      "Source": "LayoutViewsExample",
+      "ContentRoot": "D:\\Cesar\\Udemy\\Projects&examples\\LayoutViewsExample\\LayoutViewsExample\\wwwroot\\",
+      "BasePath": "_content/LayoutViewsExample",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\Cesar\\Udemy\\Projects&examples\\LayoutViewsExample\\LayoutViewsExample\\wwwroot\\StyleSheet.css",
+      "SourceId": "LayoutViewsExample",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Cesar\\Udemy\\Projects&examples\\LayoutViewsExample\\LayoutViewsExample\\wwwroot\\",
+      "BasePath": "_content/LayoutViewsExample",
+      "RelativePath": "StyleSheet.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\StyleSheet.css"
+    }
+  ]
+}
