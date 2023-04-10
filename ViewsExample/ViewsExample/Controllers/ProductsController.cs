@@ -4,7 +4,8 @@ namespace ViewsExample.Controllers
 {
     public class ProductsController : Controller
     {
-        public IActionResult Index()
+        [Route("products/all")]
+        public IActionResult All()
         {
             return View();
         }
