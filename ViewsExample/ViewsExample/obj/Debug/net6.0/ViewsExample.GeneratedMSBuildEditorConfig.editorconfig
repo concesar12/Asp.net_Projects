@@ -26,3 +26,15 @@ build_metadata.AdditionalFiles.CssScope =
 [D:/Cesar/Udemy/Projects&examples/ViewsExample/ViewsExample/Views/Home/PersonAndProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQZXJzb25BbmRQcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Cesar/Udemy/Projects&examples/ViewsExample/ViewsExample/Views/Home/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Cesar/Udemy/Projects&examples/ViewsExample/ViewsExample/Views/Products/All.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcQWxsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Cesar/Udemy/Projects&examples/ViewsExample/ViewsExample/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
