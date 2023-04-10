@@ -23,6 +23,10 @@
   <div class="page-content">
       @RenderBody()
   </div>
+
+  <div class="footer-content">
+      @RenderSection("footer_section", false) @*This has to match with the section declared in contact view// the false in this case means that the parameter is optinal*@ 
+  </div>
  </div>
 
 </body>
