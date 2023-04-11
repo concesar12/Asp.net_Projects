@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "VLoNj+L9SeYyKYMAekM1PNWzETtvScpt3Nk1RfE1d0g=",
+  "Source": "PartialViewsExample",
+  "BasePath": "_content/PartialViewsExample",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "PartialViewsExample\\wwwroot",
+      "Source": "PartialViewsExample",
+      "ContentRoot": "D:\\Cesar\\Udemy\\Projects&examples\\PartialViewsExample\\PartialViewsExample\\wwwroot\\",
+      "BasePath": "_content/PartialViewsExample",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\Cesar\\Udemy\\Projects&examples\\PartialViewsExample\\PartialViewsExample\\wwwroot\\StyleSheet.css",
+      "SourceId": "PartialViewsExample",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Cesar\\Udemy\\Projects&examples\\PartialViewsExample\\PartialViewsExample\\wwwroot\\",
+      "BasePath": "_content/PartialViewsExample",
+      "RelativePath": "StyleSheet.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\StyleSheet.css"
+    }
+  ]
+}
