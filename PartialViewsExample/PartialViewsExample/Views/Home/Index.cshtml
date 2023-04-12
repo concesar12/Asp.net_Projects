@@ -1,8 +1,24 @@
 ﻿<h1>Home</h1>
-
-<partial name="_ListPartialView"></partial> @*This tag helper is necesary to add the partial view /A tag helper is a tag that internally is taken as a c# class*@
-@*By doing this below I can modify the content passed to the ViewData to show what I want to show*@
 @{
+    ListModel listModel = new ListModel();
+    listModel.ListTitle = "Countries";
+    listModel.ListItems = new List<string>()
+            {
+               "USA",
+                "Colombia",
+                "Uruguay",
+                "Haiti"
+            };
+}
+<partial name="_ListPartialView" model="listModel"></partial> @*This tag helper is necesary to add the partial view /A tag helper is a tag that internally is taken as a c# class*@
+
+
+
+
+
+
+@*By doing this below I can modify the content passed to the ViewData to show what I want to show*@
+@*@{
     var myViewData = new ViewDataDictionary(ViewData);
     myViewData["ListTitle"] = "Coutries";
     myViewData["ListItems"] = new List<string>()
@@ -12,10 +28,10 @@
                 "Uruguay",
                 "Haiti"
             };
-}
+}*@
 @*In this case myViewData is the only thing that is going to be shared for this view, it is necessary to pass the element view-datga to specify what will be displayed*@
-<div class="box">
+@*<div class="box">
     <partial name="_ListPartialView" view-data="myViewData"></partial>
 </div>
 
-<h3>ListTitle in view: @ViewBag.ListTitle</h3>
+<h3>ListTitle in view: @ViewBag.ListTitle</h3>*@

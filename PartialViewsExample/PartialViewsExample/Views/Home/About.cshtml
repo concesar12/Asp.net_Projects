@@ -13,5 +13,16 @@
 @*<partial name="_ListPartialView" /> There is another way to invoke the partial view that will be shown next*@
 
 @{
-    await Html.RenderPartialAsync("_ListPartialView");
+    ListModel listModel = new ListModel();
+    listModel.ListTitle = "Programming languages";
+    listModel.ListItems = new List<string>()
+            {
+               "C#",
+                "C++",
+                "C",
+                "Python"
+            };
+    await Html.RenderPartialAsync("_ListPartialView", listModel); 
+    //For asyn or render partial async I have to provide the second argument always
+
 }
