@@ -1,16 +1,32 @@
 ﻿<h1>Home</h1>
+@*This is for partial view result*@
+<button class="button button-blue-back" type="button" id="button-load">Load Programming Languages</button>
+
+<div class="box programming-languages-content">
+
+</div>
+
+<script>
+    document.querySelector("#button-load").addEventListener("click", async function() {
+       var response = await fetch("programming-languages");
+       var languages = await response.text();
+       document.querySelector(".programming-languages-content").innerHTML = languages;
+    });
+</script>
+
+@*We commented this first part because of the partial view result*@
 @{
-    ListModel listModel = new ListModel();
-    listModel.ListTitle = "Countries";
-    listModel.ListItems = new List<string>()
-            {
-               "USA",
-                "Colombia",
-                "Uruguay",
-                "Haiti"
-            };
+    //ListModel listModel = new ListModel();
+    //listModel.ListTitle = "Countries";
+    //listModel.ListItems = new List<string>()
+    //        {
+    //           "USA",
+    //            "Colombia",
+    //            "Uruguay",
+    //            "Haiti"
+    //        };
 }
-<partial name="_ListPartialView" model="listModel"></partial> @*This tag helper is necesary to add the partial view /A tag helper is a tag that internally is taken as a c# class*@
+@*<partial name="_ListPartialView" model="listModel"></partial> @*This tag helper is necesary to add the partial view /A tag helper is a tag that internally is taken as a c# class*@
 
 
 
