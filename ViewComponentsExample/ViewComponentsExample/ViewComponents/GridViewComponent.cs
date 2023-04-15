@@ -7,7 +7,7 @@ namespace ViewComponentsExample.ViewComponents
     {
         public async Task<IViewComponentResult> InvokeAsync() // This method is mandatory for every view component
         {
-            PersonGridModel model = new PersonGridModel()
+            PersonGridModel personGridModal = new PersonGridModel()
             {
                 GridTitle = "PersonsList",
                 Persons = new List<Person>()
@@ -19,8 +19,8 @@ namespace ViewComponentsExample.ViewComponents
                 }
 
             };
-            ViewData["Grid"] = model;
-            return View(); //Invoked a partial view Views/Shared/Components/Grid/Default.cshtml tis is the prefered route
+            //ViewData["Grid"] = model; //intead of using this, we will use the model object below
+            return View(personGridModal); //Invoked a partial view Views/Shared/Components/Grid/Default.cshtml tis is the prefered route
         }
     }
 }
