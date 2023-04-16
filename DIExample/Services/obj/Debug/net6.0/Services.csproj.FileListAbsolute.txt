@@ -10,3 +10,6 @@ D:\Cesar\Udemy\Projects&examples\DIExample\Services\obj\Debug\net6.0\Services.cs
 D:\Cesar\Udemy\Projects&examples\DIExample\Services\obj\Debug\net6.0\Services.dll
 D:\Cesar\Udemy\Projects&examples\DIExample\Services\obj\Debug\net6.0\ref\Services.dll
 D:\Cesar\Udemy\Projects&examples\DIExample\Services\obj\Debug\net6.0\Services.pdb
+D:\Cesar\Udemy\Projects&examples\DIExample\Services\bin\Debug\net6.0\ServiceContracts.dll
+D:\Cesar\Udemy\Projects&examples\DIExample\Services\bin\Debug\net6.0\ServiceContracts.pdb
+D:\Cesar\Udemy\Projects&examples\DIExample\Services\obj\Debug\net6.0\Services.csproj.CopyComplete

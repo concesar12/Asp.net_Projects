@@ -1,6 +1,8 @@
-﻿namespace Services
+﻿using ServiceContracts;
+namespace Services
+
 {
-    public class CitiesService
+    public class CitiesService : ICitiesServices
     {
         private List<string> _cities;
 

@@ -1,17 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Services;
+using ServiceContracts; 
 
 namespace DIExample.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly CitiesService _citiesService;
+        private readonly ICitiesServices _citiesService;
 
         //constructor
         public HomeController()
         {
             //Create object of CitiesService class
-            _citiesService = new CitiesService(); // This is bad practice, instead use Dependency injection
+            _citiesService = null;//new CitiesService(); // This is bad practice, instead use Dependency injection
         }
 
         [Route("/")]
