@@ -15,6 +15,16 @@
     All in all, Bogota is a city of striking beauty that captivates visitors with its unique blend of natural, cultural, and architectural wonders.
 </p>
 
-@await Component.InvokeAsync("Grid");
-
-<vc:grid></vc:grid>
+@{
+    PersonGridModel personGridModel = new PersonGridModel()
+   {
+    GridTitle = "Employees",
+    Persons = new List<Person>()
+    {
+        new Person() { PersonName = "Sarath", JobTitle = "Developer" },
+        new Person() { PersonName = "Srinivas", JobTitle = "UI Developer" },
+        new Person() { PersonName = "Varun", JobTitle = "Analyst" }
+    }
+   };
+}
+<vc:grid grid="personGridModel"></vc:grid>
