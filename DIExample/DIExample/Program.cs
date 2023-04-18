@@ -6,7 +6,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.Add(new ServiceDescriptor(
     typeof(ICitiesServices), //-> first argument is the interface to be provided
     typeof(CitiesService),   //-> Second is the one that should be created everytime the first parameter is called
-    ServiceLifetime.Singleton //-> Service lifetime
+    ServiceLifetime.Scoped //-> Service lifetime
 ));
 
 var app = builder.Build();
