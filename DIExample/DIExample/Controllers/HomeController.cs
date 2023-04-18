@@ -9,10 +9,10 @@ namespace DIExample.Controllers
         private readonly ICitiesServices _citiesService;
 
         //constructor
-        public HomeController()
+        public HomeController(ICitiesServices citiesService) // This is coming from the services for inversion of control
         {
             //Create object of CitiesService class
-            _citiesService = null;//new CitiesService(); // This is bad practice, instead use Dependency injection
+            _citiesService = citiesService; //new CitiesService(); // This is bad practice, instead use Dependency injection
         }
 
         [Route("/")]
