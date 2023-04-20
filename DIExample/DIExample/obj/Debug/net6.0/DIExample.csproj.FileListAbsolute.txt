@@ -27,3 +27,5 @@ D:\Cesar\Udemy\Projects&examples\DIExample\DIExample\obj\Debug\net6.0\DIExample.
 D:\Cesar\Udemy\Projects&examples\DIExample\DIExample\obj\Debug\net6.0\DIExample.genruntimeconfig.cache
 D:\Cesar\Udemy\Projects&examples\DIExample\DIExample\bin\Debug\net6.0\ServiceContracts.dll
 D:\Cesar\Udemy\Projects&examples\DIExample\DIExample\bin\Debug\net6.0\ServiceContracts.pdb
+D:\Cesar\Udemy\Projects&examples\DIExample\DIExample\bin\Debug\net6.0\Autofac.dll
+D:\Cesar\Udemy\Projects&examples\DIExample\DIExample\bin\Debug\net6.0\Autofac.Extensions.DependencyInjection.dll
