@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WH/QbUe+sBHevs61K/+LoIciw50dzoKUysHWiMFK2Nk=",
+  "Hash": "AerDnYWbQUgypfoAzBFhCld3fEoGf4SvZDq4FFXERf8=",
   "Source": "DIExample",
   "BasePath": "_content/DIExample",
   "Mode": "Default",
@@ -8,19 +8,19 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "DIExample\\wwwroot",
+      "Name": "DIExample/wwwroot",
       "Source": "DIExample",
-      "ContentRoot": "D:\\Cesar\\Udemy\\Projects&examples\\DIExample\\DIExample\\wwwroot\\",
+      "ContentRoot": "/home/cesar/Projects/Csharp/Asp.net_Projects/DIExample/DIExample/wwwroot/",
       "BasePath": "_content/DIExample",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\Cesar\\Udemy\\Projects&examples\\DIExample\\DIExample\\wwwroot\\StyleSheet.css",
+      "Identity": "/home/cesar/Projects/Csharp/Asp.net_Projects/DIExample/DIExample/wwwroot/StyleSheet.css",
       "SourceId": "DIExample",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cesar\\Udemy\\Projects&examples\\DIExample\\DIExample\\wwwroot\\",
+      "ContentRoot": "/home/cesar/Projects/Csharp/Asp.net_Projects/DIExample/DIExample/wwwroot/",
       "BasePath": "_content/DIExample",
       "RelativePath": "StyleSheet.css",
       "AssetKind": "All",
@@ -31,7 +31,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\StyleSheet.css"
+      "OriginalItemSpec": "wwwroot/StyleSheet.css"
     }
   ]
 }
