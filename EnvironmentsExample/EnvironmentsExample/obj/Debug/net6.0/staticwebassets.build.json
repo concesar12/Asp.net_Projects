@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "+SlApRvd1VUWScYUbUM7nqWMjUFNXGnOaCusvC7vdfc=",
+  "Source": "EnvironmentsExample",
+  "BasePath": "_content/EnvironmentsExample",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "EnvironmentsExample\\wwwroot",
+      "Source": "EnvironmentsExample",
+      "ContentRoot": "D:\\Cesar\\Udemy\\Projects&examples\\EnvironmentsExample\\EnvironmentsExample\\wwwroot\\",
+      "BasePath": "_content/EnvironmentsExample",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\Cesar\\Udemy\\Projects&examples\\EnvironmentsExample\\EnvironmentsExample\\wwwroot\\StyleSheet.css",
+      "SourceId": "EnvironmentsExample",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Cesar\\Udemy\\Projects&examples\\EnvironmentsExample\\EnvironmentsExample\\wwwroot\\",
+      "BasePath": "_content/EnvironmentsExample",
+      "RelativePath": "StyleSheet.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\StyleSheet.css"
+    }
+  ]
+}
