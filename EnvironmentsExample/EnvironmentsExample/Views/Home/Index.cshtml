@@ -5,5 +5,12 @@
 <h1>Home</h1>
 
 <div class="box">
-    Environment: @ViewBag.CurrentEnviornment
+    Environment: @ViewBag.CurrentEnvironment
 </div>
+<environment include="Development">
+    <button class="button button-blue-back">Button only for development Environment</button>
+</environment>
+
+<environment exclude="Development">
+    <button class="button button-blue-back">Button only for except development Environment</button>
+</environment>
