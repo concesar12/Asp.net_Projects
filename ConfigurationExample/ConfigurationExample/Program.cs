@@ -6,7 +6,7 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseEndpoints(endpoints => //The rihght way to read this is by, whenever going to this endpoint perform whatever is inside of the lamda function
 {
-    endpoints.Map("/", async context =>
+    endpoints.Map("/config", async context =>
     {
         await context.Response.WriteAsync(app.Configuration["MyKey"] + "\n"); //this is not case sensitive
         await context.Response.WriteAsync(app.Configuration.GetValue<string>("MyKey") + "\n"); //this is not case sensitive
