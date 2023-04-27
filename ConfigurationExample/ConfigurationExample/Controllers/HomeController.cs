@@ -15,10 +15,11 @@ namespace ConfigurationExample.Controllers
         [Route("/")]
         public IActionResult Index()
         {
-            ViewBag.MyKey = _configuration["MyKey"];
-            ViewBag.MyAPIKey = _configuration.GetValue<string>("MyKey");
-            ViewBag.MyOtherKey = _configuration.GetValue<int>("x", 50);
-
+            //ViewBag.ClientID = _configuration["weatherapi:ClientID"];
+            //ViewBag.ClientSecret = _configuration.GetValue("weatherapi:ClientSecret", "the default client secret");
+            IConfigurationSection weatherapiSection = _configuration.GetSection("weatherapi");
+            ViewBag.ClientID = weatherapiSection["ClientID"];
+            ViewBag.ClientSecret = weatherapiSection["ClientSecret"];
             return View();
         }
     }

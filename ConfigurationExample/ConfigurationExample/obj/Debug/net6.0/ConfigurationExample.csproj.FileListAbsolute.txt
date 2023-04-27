@@ -241,3 +241,5 @@ D:\Cesar\Udemy\Projects&examples\ConfigurationExample\ConfigurationExample\obj\D
 D:\Cesar\Udemy\Projects&examples\ConfigurationExample\ConfigurationExample\obj\Debug\net6.0\ref\ConfigurationExample.dll
 D:\Cesar\Udemy\Projects&examples\ConfigurationExample\ConfigurationExample\obj\Debug\net6.0\ConfigurationExample.pdb
 D:\Cesar\Udemy\Projects&examples\ConfigurationExample\ConfigurationExample\obj\Debug\net6.0\ConfigurationExample.genruntimeconfig.cache
+D:\Cesar\Udemy\Projects&examples\ConfigurationExample\ConfigurationExample\obj\Debug\net6.0\ConfigurationExample.RazorAssemblyInfo.cache
+D:\Cesar\Udemy\Projects&examples\ConfigurationExample\ConfigurationExample\obj\Debug\net6.0\ConfigurationExample.RazorAssemblyInfo.cs

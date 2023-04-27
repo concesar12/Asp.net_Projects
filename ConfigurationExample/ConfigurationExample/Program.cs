@@ -4,6 +4,7 @@ var app = builder.Build();
 
 app.UseStaticFiles();
 app.UseRouting();
+/* This was used for the IconfigurationController
 app.UseEndpoints(endpoints => //The rihght way to read this is by, whenever going to this endpoint perform whatever is inside of the lamda function
 {
     endpoints.Map("/config", async context =>
@@ -13,6 +14,6 @@ app.UseEndpoints(endpoints => //The rihght way to read this is by, whenever goin
         await context.Response.WriteAsync(app.Configuration.GetValue<int>("x", 10) + "\n"); // In this case x will be taken from the configuration but if not present 10 will be taken as default
     });
 });
-
+*/
 app.MapControllers();
 app.Run();
