@@ -5,17 +5,18 @@ namespace StocksApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly MyService _myServicec;
+        private readonly FinnhubService _finnhubService;
 
-        public HomeController(MyService myService)
+        public HomeController(FinnhubService finnhubService)
         {
-            _myServicec = myService;
+            _finnhubService = finnhubService;
         }
 
         [Route("/")]
         public async Task<IActionResult> Index()
         {
-            await _myServicec.method();
+            //We use in this way to be ablo to change the type the stock we want dynamically
+            Dictionary<string, object>? responseDictionary = await _finnhubService.GetStockPriceQuote("MSFT"); // This is to read what has been passed as response
             return View();
         }
     }
