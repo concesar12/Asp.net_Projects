@@ -1693,6 +1693,19 @@
         "runtime": {
           "bin/placeholder/ServiceContracts.dll": {}
         }
+      },
+      "Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ServiceContracts": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.dll": {}
+        }
       }
     }
   },
@@ -5995,6 +6008,11 @@
       "type": "project",
       "path": "../ServiceContracts/ServiceContracts.csproj",
       "msbuildProject": "../ServiceContracts/ServiceContracts.csproj"
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "path": "../Services/Services.csproj",
+      "msbuildProject": "../Services/Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6002,6 +6020,7 @@
       "Entities >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.11.0",
       "ServiceContracts >= 1.0.0",
+      "Services >= 1.0.0",
       "coverlet.collector >= 3.1.0",
       "xunit >= 2.4.1",
       "xunit.runner.visualstudio >= 2.4.3"
@@ -6044,6 +6063,9 @@
             },
             "D:\\Cesar\\Udemy\\Projects&examples\\CRUDSolution\\ServiceContracts\\ServiceContracts.csproj": {
               "projectPath": "D:\\Cesar\\Udemy\\Projects&examples\\CRUDSolution\\ServiceContracts\\ServiceContracts.csproj"
+            },
+            "D:\\Cesar\\Udemy\\Projects&examples\\CRUDSolution\\Services\\Services.csproj": {
+              "projectPath": "D:\\Cesar\\Udemy\\Projects&examples\\CRUDSolution\\Services\\Services.csproj"
             }
           }
         }

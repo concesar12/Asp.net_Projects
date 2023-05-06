@@ -1,0 +1,17 @@
+D:\Cesar\Udemy\Projects&examples\CRUDSolution\Services\bin\Debug\net6.0\Services.deps.json
+D:\Cesar\Udemy\Projects&examples\CRUDSolution\Services\bin\Debug\net6.0\Services.dll
+D:\Cesar\Udemy\Projects&examples\CRUDSolution\Services\bin\Debug\net6.0\ref\Services.dll
+D:\Cesar\Udemy\Projects&examples\CRUDSolution\Services\bin\Debug\net6.0\Services.pdb
+D:\Cesar\Udemy\Projects&examples\CRUDSolution\Services\bin\Debug\net6.0\Entities.dll
+D:\Cesar\Udemy\Projects&examples\CRUDSolution\Services\bin\Debug\net6.0\ServiceContracts.dll
+D:\Cesar\Udemy\Projects&examples\CRUDSolution\Services\bin\Debug\net6.0\ServiceContracts.pdb
+D:\Cesar\Udemy\Projects&examples\CRUDSolution\Services\bin\Debug\net6.0\Entities.pdb
+D:\Cesar\Udemy\Projects&examples\CRUDSolution\Services\obj\Debug\net6.0\Services.csproj.AssemblyReference.cache
+D:\Cesar\Udemy\Projects&examples\CRUDSolution\Services\obj\Debug\net6.0\Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cesar\Udemy\Projects&examples\CRUDSolution\Services\obj\Debug\net6.0\Services.AssemblyInfoInputs.cache
+D:\Cesar\Udemy\Projects&examples\CRUDSolution\Services\obj\Debug\net6.0\Services.AssemblyInfo.cs
+D:\Cesar\Udemy\Projects&examples\CRUDSolution\Services\obj\Debug\net6.0\Services.csproj.CoreCompileInputs.cache
+D:\Cesar\Udemy\Projects&examples\CRUDSolution\Services\obj\Debug\net6.0\Services.csproj.CopyComplete
+D:\Cesar\Udemy\Projects&examples\CRUDSolution\Services\obj\Debug\net6.0\Services.dll
+D:\Cesar\Udemy\Projects&examples\CRUDSolution\Services\obj\Debug\net6.0\ref\Services.dll
+D:\Cesar\Udemy\Projects&examples\CRUDSolution\Services\obj\Debug\net6.0\Services.pdb

@@ -97,3 +97,10 @@ D:\Cesar\Udemy\Projects&examples\CRUDSolution\CRUDTests\obj\Debug\net6.0\CRUDTes
 D:\Cesar\Udemy\Projects&examples\CRUDSolution\CRUDTests\obj\Debug\net6.0\ref\CRUDTests.dll
 D:\Cesar\Udemy\Projects&examples\CRUDSolution\CRUDTests\obj\Debug\net6.0\CRUDTests.pdb
 D:\Cesar\Udemy\Projects&examples\CRUDSolution\CRUDTests\obj\Debug\net6.0\CRUDTests.genruntimeconfig.cache
+D:\Cesar\Udemy\Projects&examples\CRUDSolution\CRUDTests\bin\Debug\net6.0\CoverletSourceRootsMapping
+D:\Cesar\Udemy\Projects&examples\CRUDSolution\CRUDTests\bin\Debug\net6.0\Entities.dll
+D:\Cesar\Udemy\Projects&examples\CRUDSolution\CRUDTests\bin\Debug\net6.0\ServiceContracts.dll
+D:\Cesar\Udemy\Projects&examples\CRUDSolution\CRUDTests\bin\Debug\net6.0\Services.dll
+D:\Cesar\Udemy\Projects&examples\CRUDSolution\CRUDTests\bin\Debug\net6.0\Entities.pdb
+D:\Cesar\Udemy\Projects&examples\CRUDSolution\CRUDTests\bin\Debug\net6.0\ServiceContracts.pdb
+D:\Cesar\Udemy\Projects&examples\CRUDSolution\CRUDTests\bin\Debug\net6.0\Services.pdb
