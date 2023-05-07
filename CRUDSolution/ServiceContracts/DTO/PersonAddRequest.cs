@@ -1,4 +1,5 @@
-﻿using ServiceContracts.Eums;
+﻿using Entities;
+using ServiceContracts.Eums;
 using System;
 using System.Collections.Generic;
 
