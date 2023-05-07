@@ -55,7 +55,7 @@ namespace CRUDTests
         {
             //arrange
             CountryAddRequest? request = new CountryAddRequest() { CountryName = "Colombia" };
-            CountryAddRequest? request2 = new CountryAddRequest() { CountryName = "Colombia" };
+            CountryAddRequest? request2 = new CountryAddRequest() { CountryName = "Colombia   " };
 
             //Assert
             Assert.Throws<ArgumentException>(() =>
