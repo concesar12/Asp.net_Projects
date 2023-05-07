@@ -7,7 +7,7 @@ namespace Services
     public class CountriesService : ICountriesService
     {
 
-        //priivate field
+        //private field
         private readonly List<Country> _countries;
 
         //constructor
@@ -48,6 +48,11 @@ namespace Services
             _countries.Add(country);
 
             return country.ToCountryResponse();
+        }
+
+        public List<CountryResponse> GetAllCountries()
+        {
+            throw new NotImplementedException();
         }
     }
 }
