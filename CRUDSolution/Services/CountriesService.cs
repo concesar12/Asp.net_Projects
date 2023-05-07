@@ -49,10 +49,12 @@ namespace Services
 
             return country.ToCountryResponse();
         }
-
+        
+        //Convert all countries from "Country" type to "CountryResponse" type
+        //Return all CountryResponse objects
         public List<CountryResponse> GetAllCountries()
         {
-            throw new NotImplementedException();
+            return _countries.Select(country => country.ToCountryResponse()).ToList();
         }
     }
 }
