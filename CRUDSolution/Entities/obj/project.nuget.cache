@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UYboU49D+gOVrVG4ZOcJQgBHQsiHC1OngFra55cvYxMEu4xUzJmnElUKJ2gky0pXjfFcLMatG+iHSN/nAULU6w==",
+  "dgSpecHash": "qg/B5Ij8jsJKHiNy+NA5ldr30u3cCG00IQznVudWwiwWE2PjS2ZMdnCWnI+/LUC9Z2f8Hmor2RkCy2SXciHfAQ==",
   "success": true,
-  "projectFilePath": "D:\\Cesar\\Udemy\\Projects&examples\\CRUDSolution\\Entities\\Entities.csproj",
+  "projectFilePath": "C:\\Projects\\Asp.net_Projects\\CRUDSolution\\Entities\\Entities.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

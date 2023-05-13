@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fO0tCn523ggS1YVogIBQoxe3mVrsY7Nsx2AIDwO01AVC9ER+dmGVWBzTSCiuOGHqAWtFM5c7VCMeBE3pHQOL7A==",
+  "dgSpecHash": "UcQNsVtfMxWJpB4Bwj/GdJupBcl7Olc1FiwqdZGTfM+JUQ019G1Wjiz/yEWauogQckSgW9Cr88MQZdl2ReGtew==",
   "success": true,
-  "projectFilePath": "D:\\Cesar\\Udemy\\Projects&examples\\CRUDSolution\\ServiceContracts\\ServiceContracts.csproj",
+  "projectFilePath": "C:\\Projects\\Asp.net_Projects\\CRUDSolution\\ServiceContracts\\ServiceContracts.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
