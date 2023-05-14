@@ -2,6 +2,8 @@
 using Entities;
 using ServiceContracts.DTO;
 using ServiceContracts;
+using System.ComponentModel.DataAnnotations;
+using Services.Helpers;
 
 namespace Services
 {
@@ -34,10 +36,7 @@ namespace Services
             }
 
             //Validate PersonName
-            if (string.IsNullOrEmpty(personAddRequest.PersonName))
-            {
-                throw new ArgumentException("PersonName can't be blank");
-            }
+            ValidationHelper.ModelValidation(personAddRequest);
 
             //convert personAddRequest into Person type
             Person person = personAddRequest.ToPerson();
