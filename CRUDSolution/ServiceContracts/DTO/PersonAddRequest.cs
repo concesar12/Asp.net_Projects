@@ -1,5 +1,5 @@
 ﻿using Entities;
-using ServiceContracts.Eums;
+using ServiceContracts.Enums;
 using System;
 using System.Collections.Generic;
 

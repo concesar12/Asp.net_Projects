@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4mDQr2SrcUqhdHixfhNXecWX2befqUBbusjyWFx11GQ=",
+  "Hash": "U4/rdSyFgyAZpe5aS5GkKUlFpqExgrG+b2x21u58hTU=",
   "Source": "CRUDExample",
   "BasePath": "_content/CRUDExample",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "CRUDExample\\wwwroot",
       "Source": "CRUDExample",
-      "ContentRoot": "D:\\Cesar\\Udemy\\Projects&examples\\CRUDSolution\\CRUDExample\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\Asp.net_Projects\\CRUDSolution\\CRUDExample\\wwwroot\\",
       "BasePath": "_content/CRUDExample",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\Cesar\\Udemy\\Projects&examples\\CRUDSolution\\CRUDExample\\wwwroot\\StyleSheet.css",
+      "Identity": "C:\\Projects\\Asp.net_Projects\\CRUDSolution\\CRUDExample\\wwwroot\\StyleSheet.css",
       "SourceId": "CRUDExample",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Cesar\\Udemy\\Projects&examples\\CRUDSolution\\CRUDExample\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\Asp.net_Projects\\CRUDSolution\\CRUDExample\\wwwroot\\",
       "BasePath": "_content/CRUDExample",
       "RelativePath": "StyleSheet.css",
       "AssetKind": "All",

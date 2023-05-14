@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ServiceContracts.Eums
+namespace ServiceContracts.Enums
 {
     public enum GenderOptions
     {
