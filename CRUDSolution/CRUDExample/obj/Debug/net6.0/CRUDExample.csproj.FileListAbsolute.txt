@@ -125,3 +125,17 @@ C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\zh-Hant\M
 C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
 C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\obj\Debug\net6.0\CRUDExample.csproj.CopyComplete
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Entities.deps.json
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Entities.runtimeconfig.json
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\ServiceContracts.deps.json
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\ServiceContracts.runtimeconfig.json
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Services.deps.json
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Services.runtimeconfig.json
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Entities.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\ServiceContracts.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Services.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Entities.pdb
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\ServiceContracts.pdb
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Services.pdb
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\obj\Debug\net6.0\CRUDExample.RazorAssemblyInfo.cache
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\obj\Debug\net6.0\CRUDExample.RazorAssemblyInfo.cs

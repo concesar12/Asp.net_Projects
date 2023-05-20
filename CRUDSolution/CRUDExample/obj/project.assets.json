@@ -924,6 +924,47 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.NET.Test.Sdk": "16.11.0"
+        },
+        "compile": {
+          "bin/placeholder/Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entities.dll": {}
+        }
+      },
+      "ServiceContracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Entities": "1.0.0",
+          "Microsoft.NET.Test.Sdk": "16.11.0"
+        },
+        "compile": {
+          "bin/placeholder/ServiceContracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ServiceContracts.dll": {}
+        }
+      },
+      "Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.NET.Test.Sdk": "16.11.0",
+          "ServiceContracts": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.dll": {}
+        }
       }
     }
   },
@@ -3656,11 +3697,29 @@
         "system.xml.xdocument.4.0.11.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "Entities/1.0.0": {
+      "type": "project",
+      "path": "../Entities/Entities.csproj",
+      "msbuildProject": "../Entities/Entities.csproj"
+    },
+    "ServiceContracts/1.0.0": {
+      "type": "project",
+      "path": "../ServiceContracts/ServiceContracts.csproj",
+      "msbuildProject": "../ServiceContracts/ServiceContracts.csproj"
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "path": "../Services/Services.csproj",
+      "msbuildProject": "../Services/Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Microsoft.NET.Test.Sdk >= 16.11.0"
+      "Entities >= 1.0.0",
+      "Microsoft.NET.Test.Sdk >= 16.11.0",
+      "ServiceContracts >= 1.0.0",
+      "Services >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3690,12 +3749,23 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Projects\\Asp.net_Projects\\CRUDSolution\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Projects\\Asp.net_Projects\\CRUDSolution\\Entities\\Entities.csproj"
+            },
+            "C:\\Projects\\Asp.net_Projects\\CRUDSolution\\ServiceContracts\\ServiceContracts.csproj": {
+              "projectPath": "C:\\Projects\\Asp.net_Projects\\CRUDSolution\\ServiceContracts\\ServiceContracts.csproj"
+            },
+            "C:\\Projects\\Asp.net_Projects\\CRUDSolution\\Services\\Services.csproj": {
+              "projectPath": "C:\\Projects\\Asp.net_Projects\\CRUDSolution\\Services\\Services.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -3732,7 +3802,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
