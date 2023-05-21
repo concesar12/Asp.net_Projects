@@ -6,7 +6,8 @@ using Services;
 
 namespace CRUDExample.Controllers
 {
-
+    //[Route("persons")] // This is done to avoid writing persons for evey route
+    [Route("[controller]")] // This takes the action method controller name that is persons
     public class PersonsController : Controller
     {
         //private fields
@@ -19,8 +20,8 @@ namespace CRUDExample.Controllers
             _personsService = personsService;
             _countriesService = countriesService;
         }
-
-        [Route("persons/index")]
+        //URL: index
+        [Route("[action]")] // Represents the name of the action below
         [Route("/")]
         public IActionResult Index(string searchBy, string? searchString, string sortBy = nameof(PersonResponse.PersonName), SortOrderOptions sortOrder = SortOrderOptions.ASC)
         {
@@ -47,7 +48,7 @@ namespace CRUDExample.Controllers
         }
 
         //Executes when the user clicks on "Create Person" hyperlink (while opening the create view)
-        [Route("persons/create")]
+        [Route("[action]")]
         [HttpGet] // This means that that method only receive get requests
         public IActionResult Create()
         {
@@ -58,7 +59,7 @@ namespace CRUDExample.Controllers
         }
 
         [HttpPost]
-        [Route("persons/create")]
+        [Route("[action]")]
         public IActionResult Create(PersonAddRequest personAddRequest)
         {
             if (!ModelState.IsValid)
