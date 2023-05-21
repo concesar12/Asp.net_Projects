@@ -2,6 +2,7 @@
 using ServiceContracts;
 using ServiceContracts.DTO;
 using ServiceContracts.Enums;
+using Services;
 
 namespace CRUDExample.Controllers
 {
@@ -10,11 +11,13 @@ namespace CRUDExample.Controllers
     {
         //private fields
         private readonly IPersonsService _personsService;
+        private readonly ICountriesService _countriesService;
 
         //Constructor
-        public PersonsController(IPersonsService personsService)
+        public PersonsController(IPersonsService personsService, ICountriesService countriesService)
         {
             _personsService = personsService;
+            _countriesService = countriesService;
         }
 
         [Route("persons/index")]
@@ -41,6 +44,17 @@ namespace CRUDExample.Controllers
             ViewBag.CurrentSortOrder = sortOrder.ToString();
 
             return View(sortedPersons); //Views/Persons/Index.cshtml
+        }
+
+        //Executes when the user clicks on "Create Person" hyperlink (while opening the create view)
+        [Route("persons/create")]
+        [HttpGet] // This means that that method only receive get requests
+        public IActionResult Create()
+        {
+            List<CountryResponse> countries = _countriesService.GetAllCountries();
+            ViewBag.Countries = countries;
+
+            return View();
         }
     }
 }
