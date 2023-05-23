@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Projects\\Asp.net_Projects\\CRUDSolution\\CRUDExample\\wwwroot\\Cesar2.png",
+      "PackagePath": "staticwebassets\\Cesar2.png"
+    },
+    {
       "Id": "C:\\Projects\\Asp.net_Projects\\CRUDSolution\\CRUDExample\\wwwroot\\StyleSheet.css",
       "PackagePath": "staticwebassets\\StyleSheet.css"
     },
