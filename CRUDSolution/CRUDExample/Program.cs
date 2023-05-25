@@ -13,9 +13,8 @@ builder.Services.AddSingleton<IPersonsService, PersonsService>();
 //Specification of the context
 builder.Services.AddDbContext<PersonsDbContext>(options =>
 {
-    options.UseSqlServer(); //We are going to use sql server for db conection, in here I can put any other DB framework to use
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")); //We are going to use sql server for db conection, in here I can put any other DB framework to use
 });
-
 
 var app = builder.Build();
 
