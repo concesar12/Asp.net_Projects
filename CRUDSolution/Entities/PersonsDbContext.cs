@@ -6,7 +6,7 @@ namespace Entities
 {
     public class PersonsDbContext : DbContext
     {
-        public PersonsDbContext(DbContextOptions options) : base(options)
+        public PersonsDbContext(DbContextOptions options) : base(options) //This is for the Db to be recognized 
         {
         }
 
