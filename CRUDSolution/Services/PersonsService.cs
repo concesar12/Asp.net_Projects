@@ -47,8 +47,10 @@ namespace Services
             person.PersonID = Guid.NewGuid();
 
             //add person object to persons list
-            _db.Persons.Add(person);
-            _db.SaveChanges();
+            //_db.Persons.Add(person);
+            //_db.SaveChanges();
+            _db.sp_InsertPerson(person);
+
 
             //convert the Person object into PersonResponse type
             return ConvertPersonToPersonResponse(person);
@@ -210,10 +212,9 @@ namespace Services
             if (person == null)
                 return false;
 
-            _db.Persons.Remove(_db.Persons.First( temp => temp.PersonID == personID));
-            _db.SaveChanges();
-
-            return true;
+            //_db.Persons.Remove(_db.Persons.First( temp => temp.PersonID == personID));
+            //_db.SaveChanges();
+            return _db.sp_DeletePerson(personID) > 0 ? true : false;
         }
     }
 }

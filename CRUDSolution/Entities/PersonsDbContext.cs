@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 namespace Entities
-{
-    public class PersonsDbContext : DbContext
     {
-        public PersonsDbContext(DbContextOptions options) : base(options) //This is for the Db to be recognized 
+    public class PersonsDbContext :DbContext
         {
-        }
+        public PersonsDbContext(DbContextOptions options) : base(options) //This is for the Db to be recognized 
+            {
+            }
 
         public DbSet<Country> Countries { get; set; }
         public DbSet<Person> Persons { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
+            {
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Country>().ToTable("Countries");
@@ -34,11 +35,34 @@ namespace Entities
 
             foreach (Person person in persons)
                 modelBuilder.Entity<Person>().HasData(person);
-        }
+            }
 
         public List<Person> sp_GetAllPersons()
-        {
+            {
             return Persons.FromSqlRaw("EXECUTE [dbo].[GetAllPersons]").ToList();
+            }
+
+        //sp will indicate to call the store procedure
+        public int sp_InsertPerson(Person person)
+            {
+            SqlParameter[] parameters = new SqlParameter[] {
+            new SqlParameter("@PersonID", person.PersonID),
+            new SqlParameter("@PersonName", person.PersonName),
+            new SqlParameter("@Email", person.Email),
+            new SqlParameter("@DateOfBirth", person.DateOfBirth),
+            new SqlParameter("@Gender", person.Gender),
+            new SqlParameter("@CountryID", person.CountryID),
+            new SqlParameter("@Address", person.Address),
+            new SqlParameter("@ReceiveNewsLetters", person.ReceiveNewsLetters)
+        };
+
+            return Database.ExecuteSqlRaw("EXECUTE [dbo].[InsertPerson] @PersonID, @PersonName, @Email, @DateOfBirth, @Gender, @CountryID, @Address, @ReceiveNewsLetters", parameters);
+            }
+
+        public int sp_DeletePerson(Guid? personID)
+        {
+            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@PersonID", personID) };
+            return Database.ExecuteSqlRaw("EXECUTE [dbo].[DeletePerson] @PersonID", parameters);
         }
     }
 }
