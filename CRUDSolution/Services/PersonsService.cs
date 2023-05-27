@@ -47,9 +47,9 @@ namespace Services
             person.PersonID = Guid.NewGuid();
 
             //add person object to persons list
-            //_db.Persons.Add(person);
-            //_db.SaveChanges();
-            _db.sp_InsertPerson(person);
+            _db.Persons.Add(person);
+            _db.SaveChanges();
+            //_db.sp_InsertPerson(person); -> store procedure
 
 
             //convert the Person object into PersonResponse type
@@ -59,8 +59,8 @@ namespace Services
         public List<PersonResponse> GetAllPersons()
         {
             //SELECT * from persons
-            //return _db.Persons.ToList().Select(temp => ConvertPersonToPersonResponse(temp)).ToList();
-            return _db.sp_GetAllPersons().Select(temp => ConvertPersonToPersonResponse(temp)).ToList();
+            return _db.Persons.ToList().Select(temp => ConvertPersonToPersonResponse(temp)).ToList();
+            //return _db.sp_GetAllPersons().Select(temp => ConvertPersonToPersonResponse(temp)).ToList();
         }
 
         public PersonResponse? GetPersonByPersonID(Guid? personID)
@@ -212,9 +212,10 @@ namespace Services
             if (person == null)
                 return false;
 
-            //_db.Persons.Remove(_db.Persons.First( temp => temp.PersonID == personID));
-            //_db.SaveChanges();
-            return _db.sp_DeletePerson(personID) > 0 ? true : false;
+            _db.Persons.Remove(_db.Persons.First( temp => temp.PersonID == personID));
+            _db.SaveChanges();
+            return true;
+            //return _db.sp_DeletePerson(personID) > 0 ? true : false;
         }
     }
 }
