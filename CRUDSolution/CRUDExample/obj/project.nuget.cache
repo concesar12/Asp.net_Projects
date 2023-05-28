@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "qUvRA6p7oo3NYGWNc45iy38pVCF0sMqJElom4bfvoo4Xj9ukyF/rU4iD6m1zAdpZkUyL8ep7hVEEQNCsAMWuow==",
+  "dgSpecHash": "TmAdjfFuHKCfzY71weg32k3n8KoEyJM/Y/2qapKkqD1/rx1ah4ca/w++kjcdyhj/0nsy441NoRm6uDBBnwiUsQ==",
   "success": true,
   "projectFilePath": "C:\\Projects\\Asp.net_Projects\\CRUDSolution\\CRUDExample\\CRUDExample.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\conce\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
     "C:\\Users\\conce\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\conce\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.0.1\\microsoft.aspnetcore.antiforgery.2.0.1.nupkg.sha512",
     "C:\\Users\\conce\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.0.1\\microsoft.aspnetcore.authentication.abstractions.2.0.1.nupkg.sha512",

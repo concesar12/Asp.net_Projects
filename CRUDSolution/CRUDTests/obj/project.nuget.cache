@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "4rQpwH/JcfrFyC+n3R4xkYK3OKMzJuPdoEN6hVgL+Ed2Myv9K7czzrntaljRGi0VplevwonF4ZJZh4YoFwNlhw==",
+  "dgSpecHash": "VKYlb5gCO5I1NkHvXoa2scxNR7ls6OAfAD2ss5iKrGfut8B5VY8lyWWPEZt/oUopLWSGLaNIfcCgF4ViekJfZQ==",
   "success": true,
   "projectFilePath": "C:\\Projects\\Asp.net_Projects\\CRUDSolution\\CRUDTests\\CRUDTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\conce\\.nuget\\packages\\coverlet.collector\\3.1.0\\coverlet.collector.3.1.0.nupkg.sha512",
+    "C:\\Users\\conce\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
     "C:\\Users\\conce\\.nuget\\packages\\microsoft.codecoverage\\17.5.0\\microsoft.codecoverage.17.5.0.nupkg.sha512",
     "C:\\Users\\conce\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\conce\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

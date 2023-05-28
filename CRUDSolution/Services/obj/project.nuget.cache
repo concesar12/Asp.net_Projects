@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "uTbdv0xoV3ndypXbeuKM4O53AhQ/xwzmMYj0NAb8h7ZUhL46g4WzUJX3zlNr2XUxYjarhf8Fj2Db/Pigofru6g==",
+  "dgSpecHash": "wnCrK9BUGraiRuy+9fKnADznhZ+NukoshLnby3yS9CdnvGerYMzj9dwIFc3V+0h6+WFobcvAJcNxIZPZs+VOvQ==",
   "success": true,
   "projectFilePath": "C:\\Projects\\Asp.net_Projects\\CRUDSolution\\Services\\Services.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\conce\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
     "C:\\Users\\conce\\.nuget\\packages\\microsoft.codecoverage\\16.11.0\\microsoft.codecoverage.16.11.0.nupkg.sha512",
     "C:\\Users\\conce\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\conce\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
