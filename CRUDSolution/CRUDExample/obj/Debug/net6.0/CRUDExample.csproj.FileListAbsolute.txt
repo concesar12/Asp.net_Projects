@@ -177,3 +177,14 @@ C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\obj\Debug\net6.0\refint\CR
 C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\obj\Debug\net6.0\CRUDExample.pdb
 C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\obj\Debug\net6.0\CRUDExample.genruntimeconfig.cache
 C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\obj\Debug\net6.0\ref\CRUDExample.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Microsoft.CodeAnalysis.Razor.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Rotativa.AspNetCore.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\obj\Debug\net6.0\CRUDExample.MvcApplicationPartsAssemblyInfo.cs
