@@ -282,7 +282,8 @@ namespace Services
                 workSheet.Cells["F1"].Value = "Country";
                 workSheet.Cells["G1"].Value = "Address";
                 workSheet.Cells["H1"].Value = "Receive News Letters";
-
+                
+                //This piece is for formatting 
                 using (ExcelRange headerCells = workSheet.Cells["A1:H1"])
                 {
                     headerCells.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;

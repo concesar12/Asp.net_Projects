@@ -1,4 +1,6 @@
 ﻿using ServiceContracts.DTO;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace ServiceContracts
 {
@@ -26,5 +28,14 @@ namespace ServiceContracts
         /// <param name="countryID">Country ID (guid) to search</param>
         /// <returns>Matching country as CountryResponse object</returns>
         Task<CountryResponse?> GetCountryByCountryID(Guid? countryID);
+
+        //Task UploadCountriesFromExcelFile(IEnumerable<IFormFile> formFile); In case wanting to have the chance to upload 1+ file
+        
+        /// <summary>
+        /// Uploads countries from excel file into database
+        /// </summary>
+        /// <param name="formFile">Excel file with list of countries</param>
+        /// <returns>Returns number of countries</returns>
+        Task<int> UploadCountriesFromExcelFile(IFormFile formFile);
     }
 }

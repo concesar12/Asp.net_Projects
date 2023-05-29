@@ -169,3 +169,9 @@ C:\Projects\Asp.net_Projects\CRUDSolution\Services\bin\Debug\net6.0\runtimes\win
 C:\Projects\Asp.net_Projects\CRUDSolution\Services\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
 C:\Projects\Asp.net_Projects\CRUDSolution\Services\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Projects\Asp.net_Projects\CRUDSolution\Services\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\Services\bin\Debug\net6.0\Microsoft.AspNetCore.Http.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\Services\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\Services\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\Services\bin\Debug\net6.0\Microsoft.AspNetCore.WebUtilities.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\Services\bin\Debug\net6.0\Microsoft.Extensions.ObjectPool.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\Services\bin\Debug\net6.0\Microsoft.Net.Http.Headers.dll

@@ -150,3 +150,9 @@ C:\Projects\Asp.net_Projects\CRUDSolution\ServiceContracts\obj\Debug\net6.0\refi
 C:\Projects\Asp.net_Projects\CRUDSolution\ServiceContracts\obj\Debug\net6.0\ServiceContracts.pdb
 C:\Projects\Asp.net_Projects\CRUDSolution\ServiceContracts\obj\Debug\net6.0\ServiceContracts.genruntimeconfig.cache
 C:\Projects\Asp.net_Projects\CRUDSolution\ServiceContracts\obj\Debug\net6.0\ref\ServiceContracts.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\ServiceContracts\bin\Debug\net6.0\Microsoft.AspNetCore.Http.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\ServiceContracts\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\ServiceContracts\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\ServiceContracts\bin\Debug\net6.0\Microsoft.AspNetCore.WebUtilities.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\ServiceContracts\bin\Debug\net6.0\Microsoft.Extensions.ObjectPool.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\ServiceContracts\bin\Debug\net6.0\Microsoft.Net.Http.Headers.dll
