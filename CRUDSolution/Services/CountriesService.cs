@@ -37,8 +37,8 @@ namespace Services
 
             //Validation: CountryName can't be duplicate
             //TODO Validate the name with a Regex to check Capital letters-numbers or special characters
-            if (await _db.Countries.CountAsync(tempCountry => tempCountry.CountryName.Trim()
-                    == countryAddRequest.CountryName.Trim()) > 0)
+            if (await _db.Countries.CountAsync(tempCountry => tempCountry.CountryName
+                    == countryAddRequest.CountryName) > 0)
             {
                 throw new ArgumentException($"Given country name {countryAddRequest.CountryName} already exists");
             }
