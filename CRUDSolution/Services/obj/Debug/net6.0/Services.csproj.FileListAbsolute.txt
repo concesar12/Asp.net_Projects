@@ -175,3 +175,5 @@ C:\Projects\Asp.net_Projects\CRUDSolution\Services\bin\Debug\net6.0\Microsoft.As
 C:\Projects\Asp.net_Projects\CRUDSolution\Services\bin\Debug\net6.0\Microsoft.AspNetCore.WebUtilities.dll
 C:\Projects\Asp.net_Projects\CRUDSolution\Services\bin\Debug\net6.0\Microsoft.Extensions.ObjectPool.dll
 C:\Projects\Asp.net_Projects\CRUDSolution\Services\bin\Debug\net6.0\Microsoft.Net.Http.Headers.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\Services\bin\Debug\net6.0\RepositoryContracts.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\Services\bin\Debug\net6.0\RepositoryContracts.pdb

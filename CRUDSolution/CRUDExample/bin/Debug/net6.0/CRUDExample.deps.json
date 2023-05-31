@@ -2125,6 +2125,14 @@
           "Entities.dll": {}
         }
       },
+      "RepositoryContracts/1.0.0": {
+        "dependencies": {
+          "Entities": "1.0.0"
+        },
+        "runtime": {
+          "RepositoryContracts.dll": {}
+        }
+      },
       "ServiceContracts/1.0.0": {
         "dependencies": {
           "Entities": "1.0.0",
@@ -2140,6 +2148,7 @@
           "CsvHelper": "30.0.1",
           "EPPlus": "6.2.4",
           "Microsoft.NET.Test.Sdk": "16.11.0",
+          "RepositoryContracts": "1.0.0",
           "ServiceContracts": "1.0.0"
         },
         "runtime": {
@@ -3597,6 +3606,11 @@
       "hashPath": "system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
     },
     "Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RepositoryContracts/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

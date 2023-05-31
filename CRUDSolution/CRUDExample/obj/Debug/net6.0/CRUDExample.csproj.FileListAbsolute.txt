@@ -195,3 +195,5 @@ C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\runtimes\
 C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
 C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\RepositoryContracts.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\RepositoryContracts.pdb
