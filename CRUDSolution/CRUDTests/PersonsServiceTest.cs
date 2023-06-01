@@ -14,6 +14,7 @@ using EntityFrameworkCoreMock;
 using Moq;
 using AutoFixture;
 using FluentAssertions;
+using RepositoryContracts;
 
 namespace CRUDTests
 {
@@ -22,7 +23,9 @@ namespace CRUDTests
         //private fields
         private readonly IPersonsService _personService;
         private readonly ICountriesService _countriesService;
+        private readonly IPersonsRepository _personRepository;
         private readonly ITestOutputHelper _testOutputHelper;
+        private readonly Mock<IPersonsRepository> _personRepositoryMock;
         private readonly IFixture _fixture;
 
 
@@ -30,6 +33,9 @@ namespace CRUDTests
         public PersonsServiceTest(ITestOutputHelper testOutputHelper)
         {
             _fixture = new Fixture();
+            _personRepositoryMock = new Mock<IPersonsRepository>();
+            _personRepository = _personRepositoryMock.Object;
+
             var countriesInitialData = new List<Country>() { };
             var personsInitialData = new List<Person>() { };
 
@@ -48,7 +54,7 @@ namespace CRUDTests
             //Create services based on mocked DbContext object
             _countriesService = new CountriesService(null);
 
-            _personService = new PersonsService(null);
+            _personService = new PersonsService(_personRepository);
 
             _testOutputHelper = testOutputHelper;
         }
@@ -95,7 +101,7 @@ namespace CRUDTests
 
         //When we supply proper person details, it should insert the person into the persons list; and it should return an object of PersonResponse, which includes with the newly generated person id
         [Fact]
-        public async Task AddPerson_ProperPersonDetails()
+        public async Task AddPerson_FullPersonDetails_ToBeSuccessful()
         {
             //Arrange
 
@@ -103,17 +109,25 @@ namespace CRUDTests
             //PersonAddRequest? personAddRequest = _fixture.Create<PersonAddRequest>(); //Autofixture default
             PersonAddRequest? personAddRequest = _fixture.Build<PersonAddRequest>().With(temp => temp.Email, "someone@example.com").Create(); //custom autofixture
 
+            Person person = personAddRequest.ToPerson();
+            PersonResponse person_response_expected = person.ToPersonResponse();
+
+            //If we supply any argument value to the AddPerson method, it should return the same return value
+            _personRepositoryMock.Setup
+             (temp => temp.AddPerson(It.IsAny<Person>())).ReturnsAsync(person);
+
             //Act
             PersonResponse person_response_from_add = await _personService.AddPerson(personAddRequest);
+            person_response_expected.PersonID = person_response_from_add.PersonID;
 
-            List<PersonResponse> persons_list = await _personService.GetAllPersons();
 
             //Assert
             //Assert.True(person_response_from_add.PersonID != Guid.Empty);
-            person_response_from_add.PersonID.Should().NotBe(Guid.Empty);
+            //person_response_from_add.PersonID.Should().NotBe(Guid.Empty);
 
             //Assert.Contains(person_response_from_add, persons_list);
-            persons_list.Should().Contain(person_response_from_add);
+            person_response_from_add.PersonID.Should().NotBe(Guid.Empty);
+            person_response_from_add.Should().Be(person_response_expected);
         }
 
         #endregion
