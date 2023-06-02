@@ -1,4 +1,6 @@
-﻿using FluentAssertions;
+﻿using Fizzler.Systems.HtmlAgilityPack;
+using FluentAssertions;
+using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +34,19 @@ namespace CRUDTests
 
             //Assert
             response.Should().BeSuccessful(); //2xx
+
+            //To get the repose of body content
+            string responseBody = await response.Content.ReadAsStringAsync();
+
+            HtmlDocument html = new HtmlDocument();
+            
+            //Bring the html as if Javascript
+            html.LoadHtml(responseBody);
+            
+            //read document object of the html DOM
+            var document = html.DocumentNode;
+
+            document.QuerySelectorAll("table.persons").Should().NotBeNull();
         }
 
         #endregion

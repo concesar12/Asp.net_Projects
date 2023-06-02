@@ -584,3 +584,7 @@ C:\Projects\Asp.net_Projects\CRUDSolution\CRUDTests\bin\Debug\net6.0\Microsoft.E
 C:\Projects\Asp.net_Projects\CRUDSolution\CRUDTests\bin\Debug\net6.0\Microsoft.Extensions.Hosting.dll
 C:\Projects\Asp.net_Projects\CRUDSolution\CRUDTests\bin\Debug\net6.0\System.IO.Pipelines.dll
 C:\Projects\Asp.net_Projects\CRUDSolution\CRUDTests\obj\Debug\net6.0\MvcTestingAppManifest.json
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDTests\bin\Debug\net6.0\Fizzler.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDTests\bin\Debug\net6.0\Fizzler.Systems.HtmlAgilityPack.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDTests\bin\Debug\net6.0\HtmlAgilityPack.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDTests\bin\Debug\net6.0\System.Xml.XPath.XmlDocument.dll
