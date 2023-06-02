@@ -74,7 +74,7 @@ namespace CRUDExample.Controllers
                 ViewBag.Countries = countries;
 
                 ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
-                return View();
+                return View(personAddRequest);
             }
 
             //call the service method
