@@ -27,9 +27,14 @@ if(builder.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
-Rotativa.AspNetCore.RotativaConfiguration.Setup("wwwroot", wkhtmltopdfRelativePath: "Rotativa");
+//We will skip this for the integration testing
+if(builder.Environment.IsEnvironment("Test") == false)
+    Rotativa.AspNetCore.RotativaConfiguration.Setup("wwwroot", wkhtmltopdfRelativePath: "Rotativa");
 
 app.UseStaticFiles();
 app.UseRouting();
 app.MapControllers();
 app.Run();
+
+//This piece of code makes the program a partial class // This will only be accessible in the test project
+public partial class Program { }
