@@ -37,11 +37,11 @@ if(builder.Environment.IsDevelopment())
 }
 
 //Create logging
-app.Logger.LogDebug("debug-message");
-app.Logger.LogInformation("information-message");
-app.Logger.LogWarning("warning-message");
-app.Logger.LogError("error-message");
-app.Logger.LogCritical("critical-message");
+//app.Logger.LogDebug("debug-message");
+//app.Logger.LogInformation("information-message");
+//app.Logger.LogWarning("warning-message");
+//app.Logger.LogError("error-message");
+//app.Logger.LogCritical("critical-message");
 
 //We will skip this for the integration testing
 if (builder.Environment.IsEnvironment("Test") == false)

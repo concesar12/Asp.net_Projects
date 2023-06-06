@@ -12,21 +12,29 @@ namespace CRUDExample.Controllers
     [Route("[controller]")] // This takes the action method controller name that is persons
     public class PersonsController : Controller
     {
-        //private fields
+        //private fields from our services
         private readonly IPersonsService _personsService;
         private readonly ICountriesService _countriesService;
+        //Create the log
+        private readonly ILogger<PersonsController> _logger;
 
         //Constructor
-        public PersonsController(IPersonsService personsService, ICountriesService countriesService)
+        public PersonsController(IPersonsService personsService, ICountriesService countriesService, ILogger<PersonsController> logger)
         {
             _personsService = personsService;
             _countriesService = countriesService;
+            _logger = logger;
         }
         //URL: index
         [Route("[action]")] // Represents the name of the action below
         [Route("/")]
         public async Task<IActionResult> Index(string searchBy, string? searchString, string sortBy = nameof(PersonResponse.PersonName), SortOrderOptions sortOrder = SortOrderOptions.ASC)
         {
+            //Log information
+            _logger.LogInformation("Index action method of PersonsController");
+            //Log Debug
+            _logger.LogDebug($"searchBy: {searchBy}, searchString: {searchString}, sortBy: {sortBy}, sortOrder: {sortOrder}");
+
             //Search
             ViewBag.SearchFields = new Dictionary<string, string>()
               {
