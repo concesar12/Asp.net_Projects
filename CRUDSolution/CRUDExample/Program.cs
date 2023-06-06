@@ -31,10 +31,14 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 var app = builder.Build();
 
+//Create application pipeline
 if(builder.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
+
+//Enable http logging
+app.UseHttpLogging();
 
 //Create logging
 //app.Logger.LogDebug("debug-message");
