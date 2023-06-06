@@ -180,7 +180,6 @@ C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Microsoft
 C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
 C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
 C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Microsoft.CodeAnalysis.Razor.dll
-C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Rotativa.AspNetCore.dll
@@ -199,3 +198,12 @@ C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Repositor
 C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\RepositoryContracts.pdb
 C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Repositories.dll
 C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Repositories.pdb
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Serilog.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Serilog.AspNetCore.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\bin\Debug\net6.0\Serilog.Sinks.File.dll
