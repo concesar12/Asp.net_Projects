@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "L3twWaRadG4UWIIy/eh7ciZd1arG9L7TPJZnGOlN4YFesD2xfesQ+5j1Ibw9mv1MmZoLblPygKVW6aEH6hTbbQ==",
+  "dgSpecHash": "rpPA0s5dwnyx2iJsq7P/o/cN0BWRvhf9Pqmvycw+jd5llI18qvxc/T8fPasJfvWm74WeU/cAogyLj7QR9Q0/+g==",
   "success": true,
   "projectFilePath": "C:\\Projects\\Asp.net_Projects\\CRUDSolution\\CRUDExample\\CRUDExample.csproj",
   "expectedPackageFiles": [
@@ -140,6 +140,7 @@
     "C:\\Users\\conce\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512",
     "C:\\Users\\conce\\.nuget\\packages\\serilog.sinks.mssqlserver\\6.3.0\\serilog.sinks.mssqlserver.6.3.0.nupkg.sha512",
     "C:\\Users\\conce\\.nuget\\packages\\serilog.sinks.periodicbatching\\3.1.0\\serilog.sinks.periodicbatching.3.1.0.nupkg.sha512",
+    "C:\\Users\\conce\\.nuget\\packages\\serilog.sinks.seq\\5.2.2\\serilog.sinks.seq.5.2.2.nupkg.sha512",
     "C:\\Users\\conce\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\conce\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\conce\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
