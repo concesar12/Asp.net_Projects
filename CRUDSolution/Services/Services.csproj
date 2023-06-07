@@ -11,6 +11,7 @@
     <PackageReference Include="EPPlus" Version="6.2.4" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
     <PackageReference Include="Serilog.Extensions.Hosting" Version="7.0.0" />
+    <PackageReference Include="SerilogTimings" Version="3.0.1" />
   </ItemGroup>
 
   <ItemGroup>

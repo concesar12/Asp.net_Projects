@@ -17,6 +17,9 @@ using FluentAssertions;
 using RepositoryContracts;
 using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities.ObjectModel;
 using System.Linq.Expressions;
+using Serilog;
+using Serilog.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace CRUDTests
 {
@@ -37,10 +40,9 @@ namespace CRUDTests
             _personRepositoryMock = new Mock<IPersonsRepository>();
             _personRepository = _personRepositoryMock.Object;
 
-            var countriesInitialData = new List<Country>() { };
-            var personsInitialData = new List<Person>() { };
-
-            _personService = new PersonsService(_personRepository);
+            var diagnosticContextMock = new Mock<IDiagnosticContext>();
+            var loggerMock = new Mock<ILogger<PersonsService>>();
+            _personService = new PersonsService(_personRepository, loggerMock.Object ,diagnosticContextMock.Object);
 
             _testOutputHelper = testOutputHelper;
         }

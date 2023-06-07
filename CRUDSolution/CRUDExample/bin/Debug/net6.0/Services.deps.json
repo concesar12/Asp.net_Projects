@@ -13,6 +13,7 @@
           "Microsoft.NET.Test.Sdk": "16.11.0",
           "RepositoryContracts": "1.0.0",
           "Serilog.Extensions.Hosting": "7.0.0",
+          "SerilogTimings": "3.0.1",
           "ServiceContracts": "1.0.0"
         },
         "runtime": {
@@ -859,6 +860,17 @@
           "lib/net6.0/Serilog.Extensions.Logging.dll": {
             "assemblyVersion": "7.0.0.0",
             "fileVersion": "7.0.0.0"
+          }
+        }
+      },
+      "SerilogTimings/3.0.1": {
+        "dependencies": {
+          "Serilog": "2.12.0"
+        },
+        "runtime": {
+          "lib/net6.0/SerilogTimings.dll": {
+            "assemblyVersion": "3.0.1.0",
+            "fileVersion": "3.0.1.0"
           }
         }
       },
@@ -1743,6 +1755,13 @@
       "sha512": "sha512-9faU0zNQqU7I6soVhLUMYaGNpgWv6cKlKb2S5AnS8gXxzW/em5Ladm/6FMrWTnX41cdbdGPOWNAo6adi4WaJ6A==",
       "path": "serilog.extensions.logging/7.0.0",
       "hashPath": "serilog.extensions.logging.7.0.0.nupkg.sha512"
+    },
+    "SerilogTimings/3.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Zs28eTgszAMwpIrbBnWHBI50yuxL50p/dmAUWmy75+axdZYK/Sjm5/5m1N/CisR8acJUhTVcjPZrsB1P5iv0Uw==",
+      "path": "serilogtimings/3.0.1",
+      "hashPath": "serilogtimings.3.0.1.nupkg.sha512"
     },
     "System.Buffers/4.5.0": {
       "type": "package",

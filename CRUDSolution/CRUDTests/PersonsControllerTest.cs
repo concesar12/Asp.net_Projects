@@ -42,7 +42,7 @@ namespace CRUDTests
             //Arrange
             List<PersonResponse> persons_response_list = _fixture.Create<List<PersonResponse>>();
 
-            PersonsController personsController = new PersonsController(_personsService, _countriesService);
+            PersonsController personsController = new PersonsController(_personsService, _countriesService, null);
 
             _personsServiceMock
              .Setup(temp => temp.GetFilteredPersons(It.IsAny<string>(), It.IsAny<string>()))
@@ -84,7 +84,7 @@ namespace CRUDTests
              .Setup(temp => temp.AddPerson(It.IsAny<PersonAddRequest>()))
              .ReturnsAsync(person_response);
 
-            PersonsController personsController = new PersonsController(_personsService, _countriesService);
+            PersonsController personsController = new PersonsController(_personsService, _countriesService, null);
 
 
             //Act
@@ -119,7 +119,7 @@ namespace CRUDTests
              .Setup(temp => temp.AddPerson(It.IsAny<PersonAddRequest>()))
              .ReturnsAsync(person_response);
 
-            PersonsController personsController = new PersonsController(_personsService, _countriesService);
+            PersonsController personsController = new PersonsController(_personsService, _countriesService, null);
 
 
             //Act
