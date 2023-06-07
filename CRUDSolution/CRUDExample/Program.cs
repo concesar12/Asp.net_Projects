@@ -48,6 +48,9 @@ builder.Services.AddHttpLogging(options =>
 
 var app = builder.Build();
 
+//Add the diagnostics serilog
+app.UseSerilogRequestLogging();
+
 //Create application pipeline
 if(builder.Environment.IsDevelopment())
 {

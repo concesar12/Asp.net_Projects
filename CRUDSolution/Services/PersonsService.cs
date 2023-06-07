@@ -13,6 +13,7 @@ using OfficeOpenXml;
 using System.ComponentModel;
 using RepositoryContracts;
 using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace Services
 {
@@ -21,13 +22,16 @@ namespace Services
         //private field
         private readonly IPersonsRepository _personsRepository;
         private readonly ILogger<PersonsService> _logger;
+        private readonly IDiagnosticContext _diagnosticContext;
+
 
 
         //constructor
-        public PersonsService(IPersonsRepository personsRepository, ILogger<PersonsService> logger)
+        public PersonsService(IPersonsRepository personsRepository, ILogger<PersonsService> logger, IDiagnosticContext diagnosticContext)
         {
             _personsRepository = personsRepository;
             _logger = logger;
+            _diagnosticContext = diagnosticContext;
         }
 
         public async Task<PersonResponse> AddPerson(PersonAddRequest? personAddRequest)
@@ -114,6 +118,8 @@ namespace Services
 
                 _ => await _personsRepository.GetAllPersons()
             };
+
+            _diagnosticContext.Set("Persons", persons);
             return persons.Select(temp => temp.ToPersonResponse()).ToList();
         }
 
