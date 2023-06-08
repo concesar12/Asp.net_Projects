@@ -34,13 +34,13 @@ namespace CRUDExample.Filters.ActionFilters
                 if (!string.IsNullOrEmpty(searchBy))
                 {
                     var searchByOptions = new List<string>() {
-      nameof(PersonResponse.PersonName),
-      nameof(PersonResponse.Email),
-      nameof(PersonResponse.DateOfBirth),
-      nameof(PersonResponse.Gender),
-      nameof(PersonResponse.CountryID),
-      nameof(PersonResponse.Address)
-     };
+                      nameof(PersonResponse.PersonName),
+                      nameof(PersonResponse.Email),
+                      nameof(PersonResponse.DateOfBirth),
+                      nameof(PersonResponse.Gender),
+                      nameof(PersonResponse.CountryID),
+                      nameof(PersonResponse.Address)
+                     };
 
                     //reset the searchBy paramer value
                     if (searchByOptions.Any(temp => temp == searchBy) == false)
