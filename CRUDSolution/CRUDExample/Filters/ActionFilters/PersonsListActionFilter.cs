@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
+﻿using CRUDExample.Controllers;
+using Microsoft.AspNetCore.Mvc.Filters;
 using ServiceContracts.DTO;
 
 namespace CRUDExample.Filters.ActionFilters
@@ -18,11 +19,54 @@ namespace CRUDExample.Filters.ActionFilters
         {
             //To do: add after logic here
             _logger.LogInformation("PersonsListActionFilter.OnActionExecuted method");
+
+            //We have done this because we can't access View data directly so we casted
+            PersonsController personsController = (PersonsController)context.Controller;
+
+            //Httpcontext will allow us to access the action arguments
+            IDictionary<string, object?>? parameters = (IDictionary<string, object?>?)context.HttpContext.Items["arguments"];
+            
+            //We are not sure if the parameters exist so we have to validate to access the value
+            if (parameters != null)
+            {
+                if (parameters.ContainsKey("searchBy"))
+                {
+                    personsController.ViewData["CurrentSearchBy"] = Convert.ToString(parameters["searchBy"]);
+                }
+
+                if (parameters.ContainsKey("searchString"))
+                {
+                    personsController.ViewData["CurrentSearchString"] = Convert.ToString(parameters["searchString"]);
+                }
+
+                if (parameters.ContainsKey("sortBy"))
+                {
+                    personsController.ViewData["CurrentSortBy"] = Convert.ToString(parameters["sortBy"]);
+                }
+
+                if (parameters.ContainsKey("sortOrder"))
+                {
+                    personsController.ViewData["CurrentSortOrder"] = Convert.ToString(parameters["sortOrder"]);
+                }
+            }
+            //We added from tyhe persons controller
+            personsController.ViewBag.SearchFields = new Dictionary<string, string>()
+              {
+                { nameof(PersonResponse.PersonName), "Person Name" },
+                { nameof(PersonResponse.Email), "Email" },
+                { nameof(PersonResponse.DateOfBirth), "Date of Birth" },
+                { nameof(PersonResponse.Gender), "Gender" },
+                { nameof(PersonResponse.CountryID), "Country" },
+                { nameof(PersonResponse.Address), "Address" }
+              };
+
         }
 
         //Filter for what happens before
         public void OnActionExecuting(ActionExecutingContext context)
         {
+            context.HttpContext.Items["arguments"] = context.ActionArguments;
+
             //To do: add before logic here
             _logger.LogInformation("PersonsListActionFilter.OnActionExecuting method");
 
