@@ -11,6 +11,7 @@ namespace CRUDExample.Controllers
 {
     //[Route("persons")] // This is done to avoid writing persons for evey route
     [Route("[controller]")] // This takes the action method controller name that is persons
+    [TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { "My-Key-From-Controller", "My-Value-From-Controller" })]
     public class PersonsController : Controller
     {
         //private fields from our services
@@ -30,7 +31,7 @@ namespace CRUDExample.Controllers
         [Route("[action]")] // Represents the name of the action below
         [Route("/")]
         [TypeFilter(typeof(PersonsListActionFilter))] //Filter without arguments
-        [TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { "X-Custom-Key", "Custom-Value" })] //Filter with arguments
+        [TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { "MyKey-FromAction", "MyValue-From-Action" })] //Filter with arguments
         public async Task<IActionResult> Index(string searchBy, string? searchString, string sortBy = nameof(PersonResponse.PersonName), SortOrderOptions sortOrder = SortOrderOptions.ASC)
         {
             //Log information
