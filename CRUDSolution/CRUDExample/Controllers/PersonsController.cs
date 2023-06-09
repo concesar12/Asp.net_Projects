@@ -29,7 +29,8 @@ namespace CRUDExample.Controllers
         //URL: index
         [Route("[action]")] // Represents the name of the action below
         [Route("/")]
-        [TypeFilter(typeof(PersonsListActionFilter))]
+        [TypeFilter(typeof(PersonsListActionFilter))] //Filter without arguments
+        [TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { "X-Custom-Key", "Custom-Value" })] //Filter with arguments
         public async Task<IActionResult> Index(string searchBy, string? searchString, string sortBy = nameof(PersonResponse.PersonName), SortOrderOptions sortOrder = SortOrderOptions.ASC)
         {
             //Log information
@@ -53,6 +54,7 @@ namespace CRUDExample.Controllers
         //Executes when the user clicks on "Create Person" hyperlink (while opening the create view)
         [Route("[action]")]
         [HttpGet] // This means that that method only receive get requests
+        [TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { "my-key", "my-value" })]
         public async Task<IActionResult> Create()
         {
             List<CountryResponse> countries = await _countriesService.GetAllCountries();
