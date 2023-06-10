@@ -1,4 +1,5 @@
 ﻿using CRUDExample.Filters.ActionFilters;
+using CRUDExample.Filters.ResourceFilters;
 using CRUDExample.Filters.ResultFilters;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -73,6 +74,7 @@ namespace CRUDExample.Controllers
         [HttpPost]
         [Route("[action]")]
         [TypeFilter(typeof(PersonCreateAndEditPostActionFilter))]
+        [TypeFilter(typeof(FeatureDisabledResourceFilter), Arguments = new object[] { false })]
         public async Task<IActionResult> Create(PersonAddRequest personRequest)
         {
             /*This was passed to the filter to make it more generic*/
