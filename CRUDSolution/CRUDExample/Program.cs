@@ -25,7 +25,7 @@ builder.Host.UseSerilog((HostBuilderContext context, IServiceProvider services, 
     .ReadFrom.Services(services); //read out current app's services and make them available to serilog
 });
 
-//it adds controllers and views as services
+//It adds controllers and views as services
 //Options as parameters
 builder.Services.AddControllersWithViews(options => {
     //options.Filters.Add<ResponseHeaderActionFilter>(5); //This is good when no arguments // 5 represents the order
