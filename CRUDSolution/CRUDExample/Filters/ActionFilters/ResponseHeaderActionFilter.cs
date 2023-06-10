@@ -2,7 +2,7 @@
 
 namespace CRUDExample.Filters.ActionFilters
 {
-    public class ResponseHeaderActionFilter : IActionFilter
+    public class ResponseHeaderActionFilter : IActionFilter, IOrderedFilter
     {
         //Creating logger
         private readonly ILogger<ResponseHeaderActionFilter> _logger;
@@ -10,12 +10,16 @@ namespace CRUDExample.Filters.ActionFilters
         private readonly string Key;
         //Response header value
         private readonly string Value;
+        //This comes with IOrderedFilter after implemet interface
+        public int Order { get; }
+
         //Constructor initialize variables
-        public ResponseHeaderActionFilter(ILogger<ResponseHeaderActionFilter> logger, string key, string value)
+        public ResponseHeaderActionFilter(ILogger<ResponseHeaderActionFilter> logger, string key, string value, int order)
         {
             _logger = logger;
             Key = key;
             Value = value;
+            Order = order;
         }
 
 

@@ -5,7 +5,6 @@ using RepositoryContracts;
 using Serilog;
 using ServiceContracts;
 using Services;
-using Serilog;
 using CRUDExample.Filters.ActionFilters;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,11 +28,11 @@ builder.Host.UseSerilog((HostBuilderContext context, IServiceProvider services, 
 //it adds controllers and views as services
 //Options as parameters
 builder.Services.AddControllersWithViews(options => {
-    //options.Filters.Add<ResponseHeaderActionFilter>(); //This is good when no arguments
+    //options.Filters.Add<ResponseHeaderActionFilter>(5); //This is good when no arguments // 5 represents the order
     //Creates or dispatch from the service provider 
     var logger = builder.Services.BuildServiceProvider().GetRequiredService<ILogger<ResponseHeaderActionFilter>>();
     //Adding the filter with the arguments
-    options.Filters.Add(new ResponseHeaderActionFilter(logger, "My-Key-From-Global", "My-Value-From-Global"));
+    options.Filters.Add(new ResponseHeaderActionFilter(logger, "My-Key-From-Global", "My-Value-From-Global", 2));
 });
 
 //add services into IoC container
