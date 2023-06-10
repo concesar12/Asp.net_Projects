@@ -25,7 +25,7 @@ namespace CRUDExample.Filters.ResourceFilters
 
                 context.Result = new StatusCodeResult(501); //501 - Not Implemented
             }
-            else
+            else // This else is to prevent an error
             {
                 await next();
             }
