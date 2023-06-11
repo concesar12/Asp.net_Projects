@@ -37,7 +37,7 @@ namespace CRUDExample.Controllers
         //URL: persons/index
         [Route("[action]")] // Represents the name of the action below
         [Route("/")]
-        [TypeFilter(typeof(PersonsListActionFilter), Order = 4)] //Filter without arguments
+        [ServiceFilter(typeof(PersonsListActionFilter), Order = 4)] //Filter without arguments
         [TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { "MyKey-FromAction", "MyValue-From-Action", 1 }, Order = 1)] //Filter with arguments
         [TypeFilter(typeof(PersonsListResultFilter))]
         [SkipFilter]
