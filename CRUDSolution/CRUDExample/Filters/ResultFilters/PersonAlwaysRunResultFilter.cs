@@ -10,6 +10,13 @@ namespace CRUDExample.Filters.ResultFilters
 
         public void OnResultExecuting(ResultExecutingContext context)
         {
+            //Validate if the skip filter apply
+            if (context.Filters.OfType<SkipFilter>().Any())
+            {
+                return;
+            }
+
+            //TO DO: before logic here
         }
     }
 }
