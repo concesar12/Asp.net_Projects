@@ -12,9 +12,14 @@ namespace CRUDExample.Filters.ActionFilters
         //add countries services
         private readonly ICountriesService _countriesService;
 
-        public PersonCreateAndEditPostActionFilter(ICountriesService countriesService)
+        //Add logging for the impact of short circuiting
+        private readonly ILogger<PersonCreateAndEditPostActionFilter> _logger;
+
+        public PersonCreateAndEditPostActionFilter(ICountriesService countriesService, ILogger<PersonCreateAndEditPostActionFilter> logger)
         {
+
             _countriesService = countriesService;
+            _logger = logger;
         }
 
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
@@ -45,7 +50,8 @@ namespace CRUDExample.Filters.ActionFilters
                 await next(); //calls the subsequent filter or action method
             }
 
-            //TO DO: before logic
+            //TO DO: After logic
+            _logger.LogInformation("In after logic of PersonsCreateAndEdit Action filter");
         }
     }
 }

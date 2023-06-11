@@ -6,7 +6,7 @@ namespace CRUDExample.Filters.ExceptionFilters
     public class HandleExceptionFilter :IExceptionFilter
     {
         private readonly ILogger<HandleExceptionFilter> _logger;
-        //
+        //This will give us access to the current working environment
         private readonly IHostEnvironment _hostEnvironment;
 
         public HandleExceptionFilter(ILogger<HandleExceptionFilter> logger, IHostEnvironment hostEvironment)
