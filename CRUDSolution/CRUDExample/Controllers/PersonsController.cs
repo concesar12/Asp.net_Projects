@@ -101,7 +101,7 @@ namespace CRUDExample.Controllers
         //Url: persons/create
         [HttpGet]
         [Route("[action]/{personID}")] //Eg: /persons/edit/1
-        [TypeFilter(typeof(TokenResultFilter))]
+        //[TypeFilter(typeof(TokenResultFilter))] We commented to not pass the cookies and demonstrate Alwaysrun filter
         public async Task<IActionResult> Edit(Guid personID)
         {
             PersonResponse? personResponse = await _personsService.GetPersonByPersonID(personID);
@@ -123,6 +123,7 @@ namespace CRUDExample.Controllers
         [Route("[action]/{personID}")]
         [TypeFilter(typeof(PersonCreateAndEditPostActionFilter))]
         [TypeFilter(typeof(TokenAuthorizationFilter))]
+        [TypeFilter(typeof(PersonAlwaysRunResultFilter))]
         public async Task<IActionResult> Edit(PersonUpdateRequest personRequest)
         {
             PersonResponse? personResponse = await _personsService.GetPersonByPersonID(personRequest.PersonID);
