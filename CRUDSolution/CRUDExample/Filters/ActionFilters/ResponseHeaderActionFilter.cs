@@ -2,24 +2,50 @@
 
 namespace CRUDExample.Filters.ActionFilters
 {
-    public class ResponseHeaderActionFilter : ActionFilterAttribute
+    public class ResponseHeaderFilterFactoryAttribute : Attribute, IFilterFactory
+    {
+        //Means can be accesible through multiple requests
+        public bool IsReusable => false;
+        private string? Key { get; set; }
+        private string? Value { get; set; }
+        private int Order { get; set; }
+        
+        //Contructor
+        public ResponseHeaderFilterFactoryAttribute(string key, string value, int order)
+        {
+            Key = key;
+            Value = value;
+            Order = order;
+        }
+
+        //Controller -> FilterFactory -> Filter
+        public IFilterMetadata CreateInstance(IServiceProvider serviceProvider)
+        {
+            //Service provider help us inject methods
+            var filter = serviceProvider.GetRequiredService<ResponseHeaderActionFilter>();
+            filter.Key = Key;
+            filter.Value = Value;
+            filter.Order = Order;
+            //return filter object
+            return filter;
+        }
+    }
+
+    public class ResponseHeaderActionFilter : IAsyncActionFilter, IOrderedFilter
     {
         //Creating logger
-        //private readonly ILogger<ResponseHeaderActionFilter> _logger; // We can't inject logger because ActionFilterAttribute does not allow
+        private readonly ILogger<ResponseHeaderActionFilter> _logger; // We can't inject logger because ActionFilterAttribute does not allow
         //Response header key
-        private readonly string _key;
+        public string Key { get; set; }
         //Response header value
-        private readonly string _value;
+        public string Value { get; set; }
         //This comes with IOrderedFilter after implemet interface
-        //public int Order { get; } //This is precreated by ActionFilterAttribute
+        public int Order { get; set; } //This is precreated by ActionFilterAttribute
 
         //Constructor initialize variables
-        public ResponseHeaderActionFilter(string key, string value, int order)
+        public ResponseHeaderActionFilter(ILogger<ResponseHeaderActionFilter> logger)
         {
-            //_logger = logger; no longer supported by actionfilter
-            _key = key;
-            _value = value;
-            Order = order;
+            _logger = logger;
         }
 
         /*This piece is not longer necessary as we are using an async filter*/
@@ -38,15 +64,15 @@ namespace CRUDExample.Filters.ActionFilters
         //}
 
         //Now we can use async in here //This will handle both previous
-        public override async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
+        public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
-            //_logger.LogInformation("{FilterName}.{MethodName} method - before", nameof(ResponseHeaderActionFilter), nameof(OnActionExecutionAsync));
+            _logger.LogInformation("{FilterName}.{MethodName} method - before", nameof(ResponseHeaderActionFilter), nameof(OnActionExecutionAsync));
 
             await next(); //calls the subsequent filter or action method It is necessary to go to after
 
-            //_logger.LogInformation("{FilterName}.{MethodName} method - after", nameof(ResponseHeaderActionFilter), nameof(OnActionExecutionAsync));
+            _logger.LogInformation("{FilterName}.{MethodName} method - after", nameof(ResponseHeaderActionFilter), nameof(OnActionExecutionAsync));
 
-            context.HttpContext.Response.Headers[_key] = _value;
+            context.HttpContext.Response.Headers[Key] = Value;
         }
     }
 }

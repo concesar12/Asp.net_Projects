@@ -25,14 +25,18 @@ builder.Host.UseSerilog((HostBuilderContext context, IServiceProvider services, 
     .ReadFrom.Services(services); //read out current app's services and make them available to serilog
 });
 
+builder.Services.AddTransient<ResponseHeaderActionFilter>();
 //It adds controllers and views as services
 //Options as parameters
 builder.Services.AddControllersWithViews(options => {
     //options.Filters.Add<ResponseHeaderActionFilter>(5); //This is good when no arguments // 5 represents the order
     //Creates or dispatch from the service provider 
-    //var logger = builder.Services.BuildServiceProvider().GetRequiredService<ILogger<ResponseHeaderActionFilter>>(); // Commented because actionfilter
+    var logger = builder.Services.BuildServiceProvider().GetRequiredService<ILogger<ResponseHeaderActionFilter>>(); // Commented because actionfilter
     //Adding the filter with the arguments
-    options.Filters.Add(new ResponseHeaderActionFilter("My-Key-From-Global", "My-Value-From-Global", 2));
+    options.Filters.Add(new ResponseHeaderActionFilter(logger) { 
+        Key = "My-Key-From-Global",
+        Value = "My-Value-From-Global",
+        Order = 2 });
 });
 
 //add services into IoC container

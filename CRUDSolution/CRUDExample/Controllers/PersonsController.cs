@@ -16,7 +16,8 @@ namespace CRUDExample.Controllers
 {
     //[Route("persons")] // This is done to avoid writing persons for evey route
     [Route("[controller]")] // This takes the action method controller name that is persons
-    [TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { "My-Key-From-Controller", "My-Value-From-Controller", 3 }, Order = 3)]
+                            //[TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { "My-Key-From-Controller", "My-Value-From-Controller", 3 }, Order = 3)]
+    [ResponseHeaderFilterFactory("My-Key-From-Controller", "My-Value-From-Controller", 3)]
     [TypeFilter(typeof(HandleExceptionFilter))]
     [TypeFilter(typeof(PersonAlwaysRunResultFilter))]
     public class PersonsController : Controller
@@ -40,7 +41,7 @@ namespace CRUDExample.Controllers
         [ServiceFilter(typeof(PersonsListActionFilter), Order = 4)] //Filter without arguments
         //Commented because of functionality of ResponseHeaderActionFilter
         //[TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { "MyKey-FromAction", "MyValue-From-Action", 1 }, Order = 1)] //Filter with arguments
-        [ResponseHeaderActionFilter("MyKey-FromAction", "MyValue-From-Action", 1)]
+        [ResponseHeaderFilterFactory("MyKey-FromAction", "MyValue-From-Action", 1)]
         [TypeFilter(typeof(PersonsListResultFilter))]
         [SkipFilter]
         public async Task<IActionResult> Index(string searchBy, string? searchString, string sortBy = nameof(PersonResponse.PersonName), SortOrderOptions sortOrder = SortOrderOptions.ASC)
@@ -65,7 +66,7 @@ namespace CRUDExample.Controllers
         //Executes when the user clicks on "Create Person" hyperlink (while opening the create view)
         [Route("[action]")]
         [HttpGet] // This means that that method only receive get requests
-        [ResponseHeaderActionFilter("my-key", "my-value", 4)]
+        [ResponseHeaderFilterFactory("my-key", "my-value", 4)]
         public async Task<IActionResult> Create()
         {
             List<CountryResponse> countries = await _countriesService.GetAllCountries();
