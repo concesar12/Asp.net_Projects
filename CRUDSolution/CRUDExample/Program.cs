@@ -30,9 +30,9 @@ builder.Host.UseSerilog((HostBuilderContext context, IServiceProvider services, 
 builder.Services.AddControllersWithViews(options => {
     //options.Filters.Add<ResponseHeaderActionFilter>(5); //This is good when no arguments // 5 represents the order
     //Creates or dispatch from the service provider 
-    var logger = builder.Services.BuildServiceProvider().GetRequiredService<ILogger<ResponseHeaderActionFilter>>();
+    //var logger = builder.Services.BuildServiceProvider().GetRequiredService<ILogger<ResponseHeaderActionFilter>>(); // Commented because actionfilter
     //Adding the filter with the arguments
-    options.Filters.Add(new ResponseHeaderActionFilter(logger, "My-Key-From-Global", "My-Value-From-Global", 2));
+    options.Filters.Add(new ResponseHeaderActionFilter("My-Key-From-Global", "My-Value-From-Global", 2));
 });
 
 //add services into IoC container
