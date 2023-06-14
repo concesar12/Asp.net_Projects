@@ -6,6 +6,7 @@ using Serilog;
 using ServiceContracts;
 using Services;
 using CRUDExample.Filters.ActionFilters;
+using CRUDExample;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,40 +26,7 @@ builder.Host.UseSerilog((HostBuilderContext context, IServiceProvider services, 
     .ReadFrom.Services(services); //read out current app's services and make them available to serilog
 });
 
-builder.Services.AddTransient<ResponseHeaderActionFilter>();
-//It adds controllers and views as services
-//Options as parameters
-builder.Services.AddControllersWithViews(options => {
-    //options.Filters.Add<ResponseHeaderActionFilter>(5); //This is good when no arguments // 5 represents the order
-    //Creates or dispatch from the service provider 
-    var logger = builder.Services.BuildServiceProvider().GetRequiredService<ILogger<ResponseHeaderActionFilter>>(); // Commented because actionfilter
-    //Adding the filter with the arguments
-    options.Filters.Add(new ResponseHeaderActionFilter(logger) { 
-        Key = "My-Key-From-Global",
-        Value = "My-Value-From-Global",
-        Order = 2 });
-});
-
-//add services into IoC container
-builder.Services.AddScoped<ICountriesRepository, CountriesRepository>();
-builder.Services.AddScoped<IPersonsRepository, PersonsRepository>();
-builder.Services.AddScoped<ICountriesService, CountriesService>();
-builder.Services.AddScoped<IPersonsService, PersonsService>();
-builder.Services.AddTransient<PersonsListActionFilter>();
-
-//Specification of the DB context
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")); //We are going to use sql server for db conection, in here I can put any other DB framework to use
-});
-
-
-
-//Add http logging with options
-builder.Services.AddHttpLogging(options =>
-{
-    options.LoggingFields = Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.RequestProperties | Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.ResponsePropertiesAndHeaders;
-});
+builder.Services.ConfigureServices(builder.Configuration);
 
 var app = builder.Build();
 
