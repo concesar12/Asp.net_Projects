@@ -66,11 +66,11 @@ namespace CRUDExample.Filters.ActionFilters
         //Now we can use async in here //This will handle both previous
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
-            _logger.LogInformation("{FilterName}.{MethodName} method - before", nameof(ResponseHeaderActionFilter), nameof(OnActionExecutionAsync));
+            _logger.LogInformation("Before logic - ResponseHeaderActionFilter");
 
             await next(); //calls the subsequent filter or action method It is necessary to go to after
 
-            _logger.LogInformation("{FilterName}.{MethodName} method - after", nameof(ResponseHeaderActionFilter), nameof(OnActionExecutionAsync));
+            _logger.LogInformation("Before logic - ResponseHeaderActionFilter");
 
             context.HttpContext.Response.Headers[Key] = Value;
         }
