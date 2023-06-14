@@ -10,6 +10,8 @@ using CRUDExample.Controllers;
 using ServiceContracts.DTO;
 using ServiceContracts.Enums;
 using Microsoft.AspNetCore.Mvc;
+using Castle.Core.Logging;
+using Microsoft.Extensions.Logging;
 
 namespace CRUDTests
 {
@@ -17,11 +19,15 @@ namespace CRUDTests
     {
         private readonly IPersonsService _personsService;
         private readonly ICountriesService _countriesService;
+        private readonly ILogger<PersonsController> _logger;
 
         private readonly Mock<ICountriesService> _countriesServiceMock;
         private readonly Mock<IPersonsService> _personsServiceMock;
+        private readonly Mock<ILogger<PersonsController>> _loggerMock;
 
         private readonly Fixture _fixture;
+
+        
 
         public PersonsControllerTest()
         {
@@ -29,9 +35,13 @@ namespace CRUDTests
 
             _countriesServiceMock = new Mock<ICountriesService>();
             _personsServiceMock = new Mock<IPersonsService>();
+            _loggerMock = new Mock<ILogger<PersonsController>>();
 
             _countriesService = _countriesServiceMock.Object;
             _personsService = _personsServiceMock.Object;
+            _logger = _loggerMock.Object;
+
+            
         }
 
         #region Index
@@ -42,7 +52,7 @@ namespace CRUDTests
             //Arrange
             List<PersonResponse> persons_response_list = _fixture.Create<List<PersonResponse>>();
 
-            PersonsController personsController = new PersonsController(_personsService, _countriesService, null);
+            PersonsController personsController = new PersonsController(_personsService, _countriesService, _logger);
 
             _personsServiceMock
              .Setup(temp => temp.GetFilteredPersons(It.IsAny<string>(), It.IsAny<string>()))
@@ -66,7 +76,7 @@ namespace CRUDTests
 
         #region Create
 
-        [Fact]
+        //[Fact] we do not need this test case anymore since the validation is done in the filer
         public async Task Create_IfModelErrors_ToReturnCreateView()
         {
             //Arrange
@@ -84,7 +94,7 @@ namespace CRUDTests
              .Setup(temp => temp.AddPerson(It.IsAny<PersonAddRequest>()))
              .ReturnsAsync(person_response);
 
-            PersonsController personsController = new PersonsController(_personsService, _countriesService, null);
+            PersonsController personsController = new PersonsController(_personsService, _countriesService, _logger);
 
 
             //Act
@@ -119,7 +129,7 @@ namespace CRUDTests
              .Setup(temp => temp.AddPerson(It.IsAny<PersonAddRequest>()))
              .ReturnsAsync(person_response);
 
-            PersonsController personsController = new PersonsController(_personsService, _countriesService, null);
+            PersonsController personsController = new PersonsController(_personsService, _countriesService, _logger);
 
 
             //Act
