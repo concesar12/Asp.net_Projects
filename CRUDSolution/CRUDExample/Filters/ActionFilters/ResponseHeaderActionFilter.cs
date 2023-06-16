@@ -2,14 +2,15 @@
 
 namespace CRUDExample.Filters.ActionFilters
 {
-    public class ResponseHeaderFilterFactoryAttribute : Attribute, IFilterFactory
+    public class ResponseHeaderFilterFactoryAttribute :Attribute, IFilterFactory
     {
         //Means can be accesible through multiple requests
         public bool IsReusable => false;
+
         private string? Key { get; set; }
         private string? Value { get; set; }
         private int Order { get; set; }
-        
+
         //Contructor
         public ResponseHeaderFilterFactoryAttribute(string key, string value, int order)
         {
@@ -31,14 +32,17 @@ namespace CRUDExample.Filters.ActionFilters
         }
     }
 
-    public class ResponseHeaderActionFilter : IAsyncActionFilter, IOrderedFilter
+    public class ResponseHeaderActionFilter :IAsyncActionFilter, IOrderedFilter
     {
         //Creating logger
         private readonly ILogger<ResponseHeaderActionFilter> _logger; // We can't inject logger because ActionFilterAttribute does not allow
+
         //Response header key
         public string Key { get; set; }
+
         //Response header value
         public string Value { get; set; }
+
         //This comes with IOrderedFilter after implemet interface
         public int Order { get; set; } //This is precreated by ActionFilterAttribute
 

@@ -1,13 +1,13 @@
 ﻿using CRUDExample.Controllers;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using ServiceContracts.DTO;
 using ServiceContracts;
+using ServiceContracts.DTO;
 
 namespace CRUDExample.Filters.ActionFilters
 {
     //Using Async since we are calling an async filter
-    public class PersonCreateAndEditPostActionFilter : IAsyncActionFilter
+    public class PersonCreateAndEditPostActionFilter :IAsyncActionFilter
     {
         //add countries services
         private readonly ICountriesService _countriesService;
@@ -17,7 +17,6 @@ namespace CRUDExample.Filters.ActionFilters
 
         public PersonCreateAndEditPostActionFilter(ICountriesService countriesService, ILogger<PersonCreateAndEditPostActionFilter> logger)
         {
-
             _countriesService = countriesService;
             _logger = logger;
         }

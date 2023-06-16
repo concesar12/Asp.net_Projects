@@ -1,11 +1,7 @@
 ﻿using Fizzler.Systems.HtmlAgilityPack;
 using FluentAssertions;
 using HtmlAgilityPack;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -20,7 +16,6 @@ namespace CRUDTests
         {
             _client = factory.CreateClient();
         }
-
 
         #region Index
 
@@ -39,16 +34,16 @@ namespace CRUDTests
             string responseBody = await response.Content.ReadAsStringAsync();
 
             HtmlDocument html = new HtmlDocument();
-            
+
             //Bring the html as if Javascript
             html.LoadHtml(responseBody);
-            
+
             //read document object of the html DOM
             var document = html.DocumentNode;
 
             document.QuerySelectorAll("table.persons").Should().NotBeNull();
         }
 
-        #endregion
+        #endregion Index
     }
 }

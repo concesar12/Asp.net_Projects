@@ -1,8 +1,6 @@
 ﻿using Entities;
 using ServiceContracts.Enums;
-using System;
 using System.ComponentModel.DataAnnotations; // Have to add this to add the attributes
-
 
 namespace ServiceContracts.DTO
 {
@@ -18,12 +16,16 @@ namespace ServiceContracts.DTO
         [EmailAddress(ErrorMessage = "Email value should be a valid email")]
         [DataType(DataType.EmailAddress)]
         public string? Email { get; set; }
+
         [DataType(DataType.Date)]
         public DateTime? DateOfBirth { get; set; }
+
         [Required(ErrorMessage = "Gender can't be blank")]
         public GenderOptions? Gender { get; set; }
+
         [Required(ErrorMessage = "Please select a country")]
         public Guid? CountryID { get; set; }
+
         public string? Address { get; set; }
         public bool ReceiveNewsLetters { get; set; }
 

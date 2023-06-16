@@ -8,7 +8,8 @@ namespace Repositories
     {
         private readonly ApplicationDbContext _db;
 
-        public CountriesRepository(ApplicationDbContext db) {  _db = db; }
+        public CountriesRepository(ApplicationDbContext db)
+        { _db = db; }
 
         public async Task<Country> AddCountry(Country country)
         {

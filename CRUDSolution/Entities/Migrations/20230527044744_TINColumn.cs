@@ -4,7 +4,7 @@
 
 namespace Entities.Migrations
 {
-    public partial class TINColumn : Migration
+    public partial class TINColumn :Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

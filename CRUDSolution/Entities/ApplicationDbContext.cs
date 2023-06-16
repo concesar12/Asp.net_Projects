@@ -1,21 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 namespace Entities
-    {
+{
     public class ApplicationDbContext :DbContext
+    {
+        public ApplicationDbContext(DbContextOptions options) : base(options) //This is for the Db to be recognized
         {
-        public ApplicationDbContext(DbContextOptions options) : base(options) //This is for the Db to be recognized 
-            {
-            }
+        }
 
         public virtual DbSet<Country> Countries { get; set; }
         public virtual DbSet<Person> Persons { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-            {
+        {
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Country>().ToTable("Countries");
@@ -27,7 +25,6 @@ namespace Entities
 
             foreach (Country country in countries)
                 modelBuilder.Entity<Country>().HasData(country);
-
 
             //Seed to Persons
             string personsJson = System.IO.File.ReadAllText("persons.json");
@@ -55,16 +52,16 @@ namespace Entities
                 .WithMany(p => p.Persons)
                 .HasForeignKey(p => p.CountryID);
             });
-            }
+        }
 
         public List<Person> sp_GetAllPersons()
-            {
+        {
             return Persons.FromSqlRaw("EXECUTE [dbo].[GetAllPersons]").ToList();
-            }
+        }
 
         //sp will indicate to call the store procedure
         public int sp_InsertPerson(Person person)
-            {
+        {
             SqlParameter[] parameters = new SqlParameter[] {
             new SqlParameter("@PersonID", person.PersonID),
             new SqlParameter("@PersonName", person.PersonName),
@@ -77,7 +74,7 @@ namespace Entities
         };
 
             return Database.ExecuteSqlRaw("EXECUTE [dbo].[InsertPerson] @PersonID, @PersonName, @Email, @DateOfBirth, @Gender, @CountryID, @Address, @ReceiveNewsLetters", parameters);
-            }
+        }
 
         public int sp_DeletePerson(Guid? personID)
         {

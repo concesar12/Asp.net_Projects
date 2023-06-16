@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Entities;
 using Microsoft.EntityFrameworkCore;
-using Entities;
+using Microsoft.Extensions.Logging;
 using RepositoryContracts;
 using System.Linq.Expressions;
-using Microsoft.Extensions.Logging;
 
 namespace Repositories
 {
@@ -48,7 +45,7 @@ namespace Repositories
             _logger.LogInformation("GetFilteredPersons of PersonsRepository");
 
             return await _db.Persons.Include("Country")
-             .Where(predicate) //predicate is the lambda function 
+             .Where(predicate) //predicate is the lambda function
              .ToListAsync();
         }
 

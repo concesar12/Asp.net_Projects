@@ -7,6 +7,7 @@ namespace CRUDExample.Filters.ResultFilters
         public void OnResultExecuted(ResultExecutedContext context)
         {
         }
+
         //Appending the cookie that we need for authorization
         public void OnResultExecuting(ResultExecutingContext context)
         {

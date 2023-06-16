@@ -1,5 +1,4 @@
-﻿using System;
-using Entities;
+﻿using Entities;
 
 namespace ServiceContracts.DTO
 {
@@ -23,8 +22,8 @@ namespace ServiceContracts.DTO
             CountryResponse country_to_compare = (CountryResponse)obj;
 
             return this.CountryId == country_to_compare.CountryId && this.CountryName == country_to_compare.CountryName;
-
         }
+
         public override int GetHashCode()
         {
             return base.GetHashCode();
@@ -34,7 +33,7 @@ namespace ServiceContracts.DTO
     public static class CountryExtensions
     {
         //Converts from Country object to CountryResponse object
-        public static CountryResponse ToCountryResponse (this Country country) //This will be received in the entities class
+        public static CountryResponse ToCountryResponse(this Country country) //This will be received in the entities class
         {
             return new CountryResponse() { CountryId = country.CountryID, CountryName = country.CountryName };
         }

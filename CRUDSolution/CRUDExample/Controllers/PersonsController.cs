@@ -10,7 +10,6 @@ using Rotativa.AspNetCore;
 using ServiceContracts;
 using ServiceContracts.DTO;
 using ServiceContracts.Enums;
-using Services;
 
 namespace CRUDExample.Controllers
 {
@@ -20,11 +19,13 @@ namespace CRUDExample.Controllers
     [ResponseHeaderFilterFactory("My-Key-From-Controller", "My-Value-From-Controller", 3)]
     [TypeFilter(typeof(HandleExceptionFilter))]
     [TypeFilter(typeof(PersonAlwaysRunResultFilter))]
-    public class PersonsController : Controller
+    public class PersonsController :Controller
     {
         //private fields from our services
         private readonly IPersonsService _personsService;
+
         private readonly ICountriesService _countriesService;
+
         //Create the log
         private readonly ILogger<PersonsController> _logger;
 
@@ -35,6 +36,7 @@ namespace CRUDExample.Controllers
             _countriesService = countriesService;
             _logger = logger;
         }
+
         //URL: persons/index
         [Route("[action]")] // Represents the name of the action below
         [Route("/")]
@@ -107,7 +109,6 @@ namespace CRUDExample.Controllers
         //Url: persons/create
         [HttpGet]
         [Route("[action]/{personID}")] //Eg: /persons/edit/1
-        //[TypeFilter(typeof(TokenResultFilter))] We commented to not pass the cookies and demonstrate Alwaysrun filter
         public async Task<IActionResult> Edit(Guid personID)
         {
             PersonResponse? personResponse = await _personsService.GetPersonByPersonID(personID);
@@ -129,7 +130,6 @@ namespace CRUDExample.Controllers
         [Route("[action]/{personID}")]
         [TypeFilter(typeof(PersonCreateAndEditPostActionFilter))]
         [TypeFilter(typeof(TokenAuthorizationFilter))]
-        //[TypeFilter(typeof(PersonAlwaysRunResultFilter))] we will comment for filter overriding
         public async Task<IActionResult> Edit(PersonUpdateRequest personRequest)
         {
             PersonResponse? personResponse = await _personsService.GetPersonByPersonID(personRequest.PersonID);
@@ -192,6 +192,5 @@ namespace CRUDExample.Controllers
             MemoryStream memoryStream = await _personsService.GetPersonsExcel();
             return File(memoryStream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "persons.xlsx");
         }
-
     }
 }

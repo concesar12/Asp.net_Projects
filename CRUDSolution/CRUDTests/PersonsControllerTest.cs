@@ -1,17 +1,15 @@
 ﻿using AutoFixture;
+using CRUDExample.Controllers;
+using FluentAssertions;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Moq;
 using ServiceContracts;
-using System;
+using ServiceContracts.DTO;
+using ServiceContracts.Enums;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xunit;
-using FluentAssertions;
-using CRUDExample.Controllers;
-using ServiceContracts.DTO;
-using ServiceContracts.Enums;
-using Microsoft.AspNetCore.Mvc;
-using Castle.Core.Logging;
-using Microsoft.Extensions.Logging;
 
 namespace CRUDTests
 {
@@ -27,8 +25,6 @@ namespace CRUDTests
 
         private readonly Fixture _fixture;
 
-        
-
         public PersonsControllerTest()
         {
             _fixture = new Fixture();
@@ -40,8 +36,6 @@ namespace CRUDTests
             _countriesService = _countriesServiceMock.Object;
             _personsService = _personsServiceMock.Object;
             _logger = _loggerMock.Object;
-
-            
         }
 
         #region Index
@@ -71,8 +65,8 @@ namespace CRUDTests
             viewResult.ViewData.Model.Should().BeAssignableTo<IEnumerable<PersonResponse>>();
             viewResult.ViewData.Model.Should().Be(persons_response_list);
         }
-        #endregion
 
+        #endregion Index
 
         #region Create
 
@@ -96,7 +90,6 @@ namespace CRUDTests
 
             PersonsController personsController = new PersonsController(_personsService, _countriesService, _logger);
 
-
             //Act
             personsController.ModelState.AddModelError("PersonName", "Person Name can't be blank");
 
@@ -109,7 +102,6 @@ namespace CRUDTests
 
             viewResult.ViewData.Model.Should().Be(person_add_request);
         }
-
 
         [Fact]
         public async Task Create_IfNoModelErrors_ToReturnRedirectToIndex()
@@ -131,7 +123,6 @@ namespace CRUDTests
 
             PersonsController personsController = new PersonsController(_personsService, _countriesService, _logger);
 
-
             //Act
             IActionResult result = await personsController.Create(person_add_request);
 
@@ -141,6 +132,6 @@ namespace CRUDTests
             redirectResult.ActionName.Should().Be("Index");
         }
 
-        #endregion
+        #endregion Create
     }
 }

@@ -30,7 +30,6 @@ namespace CRUDExample.Filters.ResourceFilters
                 await next();
             }
 
-
             //TO DO: after logic
             _logger.LogInformation("{FilterName}.{MethodName} - after", nameof(FeatureDisabledResourceFilter), nameof(OnResourceExecutionAsync));
         }

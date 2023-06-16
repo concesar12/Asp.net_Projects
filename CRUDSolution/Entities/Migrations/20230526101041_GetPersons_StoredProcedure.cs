@@ -4,7 +4,7 @@
 
 namespace Entities.Migrations
 {
-    public partial class GetPersons_StoredProcedure : Migration
+    public partial class GetPersons_StoredProcedure :Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

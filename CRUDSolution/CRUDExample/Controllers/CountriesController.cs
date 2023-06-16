@@ -13,13 +13,11 @@ namespace CRUDExample.Controllers
             _countriesService = countriesService;
         }
 
-
         [Route("UploadFromExcel")]
         public IActionResult UploadFromExcel()
         {
             return View();
         }
-
 
         [HttpPost]
         [Route("UploadFromExcel")]

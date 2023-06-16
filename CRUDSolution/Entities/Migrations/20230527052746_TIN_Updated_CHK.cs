@@ -4,7 +4,7 @@
 
 namespace Entities.Migrations
 {
-    public partial class TIN_Updated_CHK : Migration
+    public partial class TIN_Updated_CHK :Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -1,31 +1,26 @@
-﻿using System;
-using Entities;
-using ServiceContracts.DTO;
-using ServiceContracts;
-using System.ComponentModel.DataAnnotations;
-using Services.Helpers;
-using ServiceContracts.Enums;
-using Microsoft.EntityFrameworkCore;
-using CsvHelper;
-using System.Globalization;
+﻿using CsvHelper;
 using CsvHelper.Configuration;
-using OfficeOpenXml;
-using System.ComponentModel;
-using RepositoryContracts;
+using Entities;
 using Microsoft.Extensions.Logging;
+using OfficeOpenXml;
+using RepositoryContracts;
 using Serilog;
 using SerilogTimings;
+using ServiceContracts;
+using ServiceContracts.DTO;
+using ServiceContracts.Enums;
+using Services.Helpers;
+using System.Globalization;
 
 namespace Services
 {
-    public class PersonsService : IPersonsService
+    public class PersonsService :IPersonsService
     {
         //private field
         private readonly IPersonsRepository _personsRepository;
+
         private readonly ILogger<PersonsService> _logger;
         private readonly IDiagnosticContext _diagnosticContext;
-
-
 
         //constructor
         public PersonsService(IPersonsRepository personsRepository, ILogger<PersonsService> logger, IDiagnosticContext diagnosticContext)
@@ -55,7 +50,6 @@ namespace Services
             //add person object to persons list
             await _personsRepository.AddPerson(person);
             //_db.sp_InsertPerson(person); -> store procedure
-
 
             //convert the Person object into PersonResponse type
             //return ConvertPersonToPersonResponse(person);
@@ -90,7 +84,7 @@ namespace Services
             _logger.LogInformation("GetFilteredPersons of PersonsService");
             List<Person> persons;
             using (Operation.Time("Time for filtered persons from DB"))
-            { 
+            {
                 persons = searchBy switch
 
                 {
@@ -105,7 +99,6 @@ namespace Services
                     nameof(PersonResponse.DateOfBirth) =>
                      await _personsRepository.GetFilteredPersons(temp =>
                      temp.DateOfBirth.Value.ToString("dd MMMM yyyy").Contains(searchString)),
-
 
                     nameof(PersonResponse.Gender) =>
                      await _personsRepository.GetFilteredPersons(temp =>
@@ -224,13 +217,13 @@ namespace Services
             MemoryStream memoryStream = new MemoryStream();
             StreamWriter streamWriter = new StreamWriter(memoryStream);
 
-            CsvConfiguration csvConfiguration =new CsvConfiguration(CultureInfo.InvariantCulture);
+            CsvConfiguration csvConfiguration = new CsvConfiguration(CultureInfo.InvariantCulture);
             CsvWriter csvWriter = new CsvWriter(streamWriter, csvConfiguration);
             //the invariant culture works to recognize commans and punctuation, default culture in .net, leaveopen is true because after writing we have to start from the beginning of file
             //CsvWriter csvWriter = new CsvWriter(streamWriter, CultureInfo.InvariantCulture, leaveOpen: true);
             //csvWriter.WriteHeader<PersonResponse>(); //PersonID,PersonName,...
 
-            //PersonName, Email , etc 
+            //PersonName, Email , etc
             csvWriter.WriteField(nameof(PersonResponse.PersonName));
             csvWriter.WriteField(nameof(PersonResponse.Email));
             csvWriter.WriteField(nameof(PersonResponse.DateOfBirth));
@@ -247,7 +240,7 @@ namespace Services
             {
                 csvWriter.WriteField(person.PersonName);
                 csvWriter.WriteField(person.Email);
-                csvWriter.WriteField(person.DateOfBirth.HasValue ? person.DateOfBirth.Value.ToString("yyyy-MM-dd"):"");
+                csvWriter.WriteField(person.DateOfBirth.HasValue ? person.DateOfBirth.Value.ToString("yyyy-MM-dd") : "");
                 csvWriter.WriteField(person.Age);
                 csvWriter.WriteField(person.Gender);
                 csvWriter.WriteField(person.Country);
@@ -278,8 +271,8 @@ namespace Services
                 workSheet.Cells["F1"].Value = "Country";
                 workSheet.Cells["G1"].Value = "Address";
                 workSheet.Cells["H1"].Value = "Receive News Letters";
-                
-                //This piece is for formatting 
+
+                //This piece is for formatting
                 using (ExcelRange headerCells = workSheet.Cells["A1:H1"])
                 {
                     headerCells.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;

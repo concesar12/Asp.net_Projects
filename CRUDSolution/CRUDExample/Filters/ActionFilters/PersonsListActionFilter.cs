@@ -5,7 +5,7 @@ using ServiceContracts.Enums;
 
 namespace CRUDExample.Filters.ActionFilters
 {
-    public class PersonsListActionFilter : IActionFilter
+    public class PersonsListActionFilter :IActionFilter
     {
         //Adding Logging
         private readonly ILogger<PersonsListActionFilter> _logger;
@@ -26,7 +26,7 @@ namespace CRUDExample.Filters.ActionFilters
 
             //Httpcontext will allow us to access the action arguments
             IDictionary<string, object?>? parameters = (IDictionary<string, object?>?)context.HttpContext.Items["arguments"];
-            
+
             //We are not sure if the parameters exist so we have to validate to access the value
             if (parameters != null)
             {
@@ -68,7 +68,6 @@ namespace CRUDExample.Filters.ActionFilters
                 { nameof(PersonResponse.CountryID), "Country" },
                 { nameof(PersonResponse.Address), "Address" }
               };
-
         }
 
         //Filter for what happens before

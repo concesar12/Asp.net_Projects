@@ -1,6 +1,5 @@
 ﻿using Entities;
 using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
 using OfficeOpenXml;
 using RepositoryContracts;
 using ServiceContracts;
@@ -8,9 +7,8 @@ using ServiceContracts.DTO;
 
 namespace Services
 {
-    public class CountriesService : ICountriesService
+    public class CountriesService :ICountriesService
     {
-
         //private field
         private readonly ICountriesRepository _countriesRepository;
 
@@ -20,10 +18,8 @@ namespace Services
             _countriesRepository = countriesRepository;
         }
 
-
         public async Task<CountryResponse> AddCountry(CountryAddRequest? countryAddRequest)
         {
-
             //Validation: countryAddRequest parameter can't be null
             if (countryAddRequest == null)
             {
@@ -45,14 +41,14 @@ namespace Services
             //Convert object from CountryAddRequest to Country type
             Country country = countryAddRequest.ToCountry();
 
-            //Generate a new GUID countryID 
+            //Generate a new GUID countryID
             country.CountryID = Guid.NewGuid();
 
             //Add country object into _countries
             await _countriesRepository.AddCountry(country);
             return country.ToCountryResponse();
         }
-        
+
         //Convert all countries from "Country" type to "CountryResponse" type
         //Return all CountryResponse objects
         public async Task<List<CountryResponse>> GetAllCountries()

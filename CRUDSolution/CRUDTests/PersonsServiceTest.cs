@@ -1,25 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using Xunit; // To use thre attribute [facts]
-using ServiceContracts;
+﻿using AutoFixture;
 using Entities;
-using ServiceContracts.DTO;
-using Services;
-using ServiceContracts.Enums;
-using Xunit.Abstractions;
-using System.Linq;
-using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
-using EntityFrameworkCoreMock;
-using Moq;
-using AutoFixture;
 using FluentAssertions;
-using RepositoryContracts;
-using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities.ObjectModel;
-using System.Linq.Expressions;
-using Serilog;
-using Serilog.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Moq;
+using RepositoryContracts;
+using Serilog;
+using ServiceContracts;
+using ServiceContracts.DTO;
+using ServiceContracts.Enums;
+using Services;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
+using Xunit; // To use thre attribute [facts]
+using Xunit.Abstractions;
 
 namespace CRUDTests
 {
@@ -27,11 +23,11 @@ namespace CRUDTests
     {
         //private fields
         private readonly IPersonsService _personService;
+
         private readonly IPersonsRepository _personRepository;
         private readonly ITestOutputHelper _testOutputHelper;
         private readonly Mock<IPersonsRepository> _personRepositoryMock;
         private readonly IFixture _fixture;
-
 
         //constructor
         public PersonsServiceTest(ITestOutputHelper testOutputHelper)
@@ -42,7 +38,7 @@ namespace CRUDTests
 
             var diagnosticContextMock = new Mock<IDiagnosticContext>();
             var loggerMock = new Mock<ILogger<PersonsService>>();
-            _personService = new PersonsService(_personRepository, loggerMock.Object ,diagnosticContextMock.Object);
+            _personService = new PersonsService(_personRepository, loggerMock.Object, diagnosticContextMock.Object);
 
             _testOutputHelper = testOutputHelper;
         }
@@ -65,7 +61,6 @@ namespace CRUDTests
             //Assert
             await action.Should().ThrowAsync<ArgumentNullException>();
         }
-
 
         //When we supply null value as PersonName, it should throw ArgumentException
         [Fact]
@@ -113,7 +108,6 @@ namespace CRUDTests
             PersonResponse person_response_from_add = await _personService.AddPerson(personAddRequest);
             person_response_expected.PersonID = person_response_from_add.PersonID;
 
-
             //Assert
             //Assert.True(person_response_from_add.PersonID != Guid.Empty);
             //person_response_from_add.PersonID.Should().NotBe(Guid.Empty);
@@ -123,7 +117,7 @@ namespace CRUDTests
             person_response_from_add.Should().Be(person_response_expected);
         }
 
-        #endregion
+        #endregion AddPerson
 
         #region GetPersonByPersonID
 
@@ -141,12 +135,11 @@ namespace CRUDTests
             person_response_from_get.Should().BeNull();
         }
 
-
         //If we supply a valid person id, it should return the valid person details as PersonResponse object
         [Fact]
         public async Task GetPersonByPersonID_WithPersonID_ToBeSucessful()
         {
-            //Arange 
+            //Arange
             //We are commenting them because we can't call two methods at same unit test for god practices
             //CountryAddRequest country_request = _fixture.Create<CountryAddRequest>();
             //CountryResponse country_response = await _countriesService.AddCountry(country_request);
@@ -167,7 +160,7 @@ namespace CRUDTests
             person_response_from_get.Should().Be(person_response_expected);
         }
 
-        #endregion
+        #endregion GetPersonByPersonID
 
         #region GetAllPersons
 
@@ -184,7 +177,6 @@ namespace CRUDTests
             //Assert
             persons_from_get.Should().BeEmpty();
         }
-
 
         //First, we will add few persons; and then when we call GetAllPersons(), it should return the same persons that were added
         [Fact]
@@ -208,7 +200,6 @@ namespace CRUDTests
                 .With(temp => temp.Country, null as Country)
                 .Create()
             };
-
 
             List<PersonResponse> person_response_list_expected = persons.Select(temp => temp.ToPersonResponse()).ToList();
 
@@ -234,7 +225,8 @@ namespace CRUDTests
             //Assert
             persons_list_from_get.Should().BeEquivalentTo(person_response_list_expected);
         }
-        #endregion
+
+        #endregion GetAllPersons
 
         #region GetFilteredPersons
 
@@ -244,7 +236,7 @@ namespace CRUDTests
         {
             //Arrange
             //no needed anymore to create these one, repository mock will do it
-            //CountryAddRequest country_request_1 = _fixture.Create<CountryAddRequest>(); 
+            //CountryAddRequest country_request_1 = _fixture.Create<CountryAddRequest>();
             //CountryAddRequest country_request_2 = _fixture.Create<CountryAddRequest>();
             //No need to add either
             //CountryResponse country_response_1 = await _countriesService.AddCountry(country_request_1);
@@ -294,14 +286,13 @@ namespace CRUDTests
             persons_list_from_search.Should().BeEquivalentTo(person_response_list_expected);
         }
 
-
         //First we will add few persons; and then we will search based on person name with some search string. It should return the matching persons
         [Fact]
         public async Task GetFilteredPersons_SearchByPersonNameToBeSuccessful()
         {
             //Arrange
             //no needed anymore to create these one, repository mock will do it
-            //CountryAddRequest country_request_1 = _fixture.Create<CountryAddRequest>(); 
+            //CountryAddRequest country_request_1 = _fixture.Create<CountryAddRequest>();
             //CountryAddRequest country_request_2 = _fixture.Create<CountryAddRequest>();
             //No need to add either
             //CountryResponse country_response_1 = await _countriesService.AddCountry(country_request_1);
@@ -351,7 +342,7 @@ namespace CRUDTests
             persons_list_from_search.Should().BeEquivalentTo(person_response_list_expected);
         }
 
-        #endregion
+        #endregion GetFilteredPersons
 
         #region GetSortedPersons
 
@@ -405,7 +396,8 @@ namespace CRUDTests
 
             persons_list_from_sort.Should().BeInDescendingOrder(temp => temp.PersonName);
         }
-        #endregion
+
+        #endregion GetSortedPersons
 
         #region UpdatePerson
 
@@ -426,7 +418,6 @@ namespace CRUDTests
             await action.Should().ThrowAsync<ArgumentNullException>();
         }
 
-
         //When we supply invalid person id, it should throw ArgumentException
         [Fact]
         public async Task UpdatePerson_InvalidPersonID_ToBeArgumentException()
@@ -445,7 +436,6 @@ namespace CRUDTests
             await action.Should().ThrowAsync<ArgumentException>();
         }
 
-
         //When PersonName is null, it should throw ArgumentException
         [Fact]
         public async Task UpdatePerson_PersonNameIsNull_ToBeArgumentException()
@@ -456,7 +446,7 @@ namespace CRUDTests
                 .With(temp => temp.Gender, "Male")
                 .With(temp => temp.PersonName, null as string)
                 .With(temp => temp.Email, "lala@example.com")
-                .With(temp=> temp.Country, null as Country).Create(); 
+                .With(temp => temp.Country, null as Country).Create();
 
             PersonResponse person_response_expected = person.ToPersonResponse();
 
@@ -470,9 +460,7 @@ namespace CRUDTests
 
             //Assert
             await action.Should().ThrowAsync<ArgumentException>();
-
         }
-
 
         //First, add a new person and try to update the person name and email
         [Fact]
@@ -503,10 +491,9 @@ namespace CRUDTests
 
             //Assert
             person_response_from_update.Should().Be(person_response_expected);
-
         }
 
-        #endregion
+        #endregion UpdatePerson
 
         #region DeletePerson
 
@@ -520,7 +507,6 @@ namespace CRUDTests
              .With(temp => temp.Country, null as Country)
              .With(temp => temp.Gender, "Female")
              .Create();
-
 
             _personRepositoryMock
              .Setup(temp => temp.DeletePersonByPersonID(It.IsAny<Guid>()))
@@ -537,7 +523,6 @@ namespace CRUDTests
             isDeleted.Should().BeTrue();
         }
 
-
         //If you supply an invalid PersonID, it should return false
         [Fact]
         public async Task DeletePerson_InvalidPersonID()
@@ -549,6 +534,6 @@ namespace CRUDTests
             isDeleted.Should().BeFalse();
         }
 
-        #endregion
+        #endregion DeletePerson
     }
 }

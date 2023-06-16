@@ -1,5 +1,4 @@
-﻿using System;
-using ServiceContracts.DTO;
+﻿using ServiceContracts.DTO;
 using ServiceContracts.Enums;
 
 namespace ServiceContracts
@@ -15,7 +14,6 @@ namespace ServiceContracts
         /// <param name="personAddRequest">Person to add</param>
         /// <returns>Returns the same person details, along with newly generated PersonID</returns>
         Task<PersonResponse> AddPerson(PersonAddRequest? personAddRequest);
-
 
         /// <summary>
         /// Returns all persons
@@ -38,7 +36,6 @@ namespace ServiceContracts
         /// <returns>Returns all matching persons based on the given search field and search string</returns>
         Task<List<PersonResponse>> GetFilteredPersons(string searchBy, string? searchString);
 
-
         /// <summary>
         /// Returns sorted list of persons
         /// </summary>
@@ -48,7 +45,6 @@ namespace ServiceContracts
         /// <returns>Returns sorted persons as PersonResponse list</returns>
         Task<List<PersonResponse>> GetSortedPersons(List<PersonResponse> allPersons, string sortBy, SortOrderOptions sortOrder);
 
-
         /// <summary>
         /// Updates the specified person details based on the given person ID
         /// </summary>
@@ -56,27 +52,23 @@ namespace ServiceContracts
         /// <returns>Returns the person response object after updation</returns>
         Task<PersonResponse> UpdatePerson(PersonUpdateRequest? personUpdateRequest);
 
-
         /// <summary>
         /// Deletes a person based on the given person id
         /// </summary>
         /// <param name="PersonID">PersonID to delete</param>
         /// <returns>Returns true, if the deletion is successful; otherwise false</returns>
         Task<bool> DeletePerson(Guid? personID);
-        
-        
+
         /// <summary>
         /// Returns the persons as CSV
         /// </summary>
         /// <returns>Returns the memory stream with CSV data</returns>
         Task<MemoryStream> GetPersonsCSV();
 
-
         /// <summary>
         /// Returns the persons as Excel
         /// </summary>
         /// <returns>Returns the memory stream with excel data</returns>
         Task<MemoryStream> GetPersonsExcel();
-
     }
 }
