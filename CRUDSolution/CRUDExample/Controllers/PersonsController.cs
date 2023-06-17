@@ -17,7 +17,7 @@ namespace CRUDExample.Controllers
     [Route("[controller]")] // This takes the action method controller name that is persons
                             //[TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { "My-Key-From-Controller", "My-Value-From-Controller", 3 }, Order = 3)]
     [ResponseHeaderFilterFactory("My-Key-From-Controller", "My-Value-From-Controller", 3)]
-    //[TypeFilter(typeof(HandleExceptionFilter))]
+    [TypeFilter(typeof(HandleExceptionFilter))]
     [TypeFilter(typeof(PersonAlwaysRunResultFilter))]
     public class PersonsController :Controller
     {
