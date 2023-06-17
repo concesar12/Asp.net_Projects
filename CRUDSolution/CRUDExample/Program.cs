@@ -31,6 +31,8 @@ if (builder.Environment.IsDevelopment())
 }
 else
 {
+    //This is created for any kind of error in runtime
+    app.UseExceptionHandler("/Error");
     app.UseExceptionHandlingMiddleware();
 }
 

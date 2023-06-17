@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/KRoCDjIIcGjaSiwlX4jBK/AanuJkY6ipRUceXPVEB4=",
+  "Hash": "DNTMxWwgR7nMi+2wDxREs+W69D87EgGJi08l/JL0dYY=",
   "Source": "CRUDExample",
   "BasePath": "_content/CRUDExample",
   "Mode": "Default",
@@ -32,6 +32,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Cesar2.png"
+    },
+    {
+      "Identity": "C:\\Projects\\Asp.net_Projects\\CRUDSolution\\CRUDExample\\wwwroot\\error.svg",
+      "SourceId": "CRUDExample",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\Asp.net_Projects\\CRUDSolution\\CRUDExample\\wwwroot\\",
+      "BasePath": "_content/CRUDExample",
+      "RelativePath": "error.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\error.svg"
     },
     {
       "Identity": "C:\\Projects\\Asp.net_Projects\\CRUDSolution\\CRUDExample\\wwwroot\\jquery.min.js",

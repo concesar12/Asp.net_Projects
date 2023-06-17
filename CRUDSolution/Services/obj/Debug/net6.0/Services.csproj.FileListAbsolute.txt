@@ -182,3 +182,5 @@ C:\Projects\Asp.net_Projects\CRUDSolution\Services\bin\Debug\net6.0\Serilog.dll
 C:\Projects\Asp.net_Projects\CRUDSolution\Services\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
 C:\Projects\Asp.net_Projects\CRUDSolution\Services\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
 C:\Projects\Asp.net_Projects\CRUDSolution\Services\bin\Debug\net6.0\SerilogTimings.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\Services\bin\Debug\net6.0\Exceptions.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\Services\bin\Debug\net6.0\Exceptions.pdb

@@ -32,9 +32,11 @@ namespace CRUDExample.Middleware
                 {
                     _logger.LogError("{ExceptionType} {ExceptionMessage}", ex.GetType().ToString(), ex.Message);
                 }
-                //Custom response message
-                httpContext.Response.StatusCode = 500;
-                await httpContext.Response.WriteAsync("Error occurred");
+                //Custom response message //Down commented becaiuse showing the exception handler
+                //httpContext.Response.StatusCode = 500;
+                //await httpContext.Response.WriteAsync("Error occurred");
+                //The same exception object will be thrown from here
+                throw;
             }
         }
     }

@@ -1,0 +1,12 @@
+C:\Projects\Asp.net_Projects\CRUDSolution\Exceptions\bin\Debug\net6.0\Exceptions.deps.json
+C:\Projects\Asp.net_Projects\CRUDSolution\Exceptions\bin\Debug\net6.0\Exceptions.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\Exceptions\bin\Debug\net6.0\Exceptions.pdb
+C:\Projects\Asp.net_Projects\CRUDSolution\Exceptions\obj\Debug\net6.0\Exceptions.csproj.AssemblyReference.cache
+C:\Projects\Asp.net_Projects\CRUDSolution\Exceptions\obj\Debug\net6.0\Exceptions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\Asp.net_Projects\CRUDSolution\Exceptions\obj\Debug\net6.0\Exceptions.AssemblyInfoInputs.cache
+C:\Projects\Asp.net_Projects\CRUDSolution\Exceptions\obj\Debug\net6.0\Exceptions.AssemblyInfo.cs
+C:\Projects\Asp.net_Projects\CRUDSolution\Exceptions\obj\Debug\net6.0\Exceptions.csproj.CoreCompileInputs.cache
+C:\Projects\Asp.net_Projects\CRUDSolution\Exceptions\obj\Debug\net6.0\Exceptions.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\Exceptions\obj\Debug\net6.0\refint\Exceptions.dll
+C:\Projects\Asp.net_Projects\CRUDSolution\Exceptions\obj\Debug\net6.0\Exceptions.pdb
+C:\Projects\Asp.net_Projects\CRUDSolution\Exceptions\obj\Debug\net6.0\ref\Exceptions.dll
