@@ -1,4 +1,5 @@
 using CRUDExample;
+using CRUDExample.Middleware;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,14 +24,19 @@ builder.Services.ConfigureServices(builder.Configuration);
 
 var app = builder.Build();
 
-//Add the diagnostics serilog
-app.UseSerilogRequestLogging();
-
 //Create application pipeline
 if (builder.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
+else
+{
+    app.UseExceptionHandlingMiddleware();
+}
+
+//Add the diagnostics serilog
+app.UseSerilogRequestLogging();
+
 
 //Enable http logging
 app.UseHttpLogging();

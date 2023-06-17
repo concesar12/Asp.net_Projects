@@ -43,7 +43,7 @@ namespace ServiceContracts
         /// <param name="sortBy">Name of the property (key), based on which the persons should be sorted</param>
         /// <param name="sortOrder">ASC or DESC</param>
         /// <returns>Returns sorted persons as PersonResponse list</returns>
-        Task<List<PersonResponse>> GetSortedPersons(List<PersonResponse> allPersons, string sortBy, SortOrderOptions sortOrder);
+        List<PersonResponse> GetSortedPersons(List<PersonResponse> allPersons, string sortBy, SortOrderOptions sortOrder);
 
         /// <summary>
         /// Updates the specified person details based on the given person ID

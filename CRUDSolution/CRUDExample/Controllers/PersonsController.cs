@@ -17,7 +17,7 @@ namespace CRUDExample.Controllers
     [Route("[controller]")] // This takes the action method controller name that is persons
                             //[TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { "My-Key-From-Controller", "My-Value-From-Controller", 3 }, Order = 3)]
     [ResponseHeaderFilterFactory("My-Key-From-Controller", "My-Value-From-Controller", 3)]
-    [TypeFilter(typeof(HandleExceptionFilter))]
+    //[TypeFilter(typeof(HandleExceptionFilter))]
     [TypeFilter(typeof(PersonAlwaysRunResultFilter))]
     public class PersonsController :Controller
     {
@@ -60,7 +60,7 @@ namespace CRUDExample.Controllers
             //ViewBag.CurrentSearchString = searchString;
 
             //Sort
-            List<PersonResponse> sortedPersons = await _personsService.GetSortedPersons(persons, sortBy, sortOrder);
+            List<PersonResponse> sortedPersons = _personsService.GetSortedPersons(persons, sortBy, sortOrder);
 
             return View(sortedPersons); //Views/Persons/Index.cshtml
         }

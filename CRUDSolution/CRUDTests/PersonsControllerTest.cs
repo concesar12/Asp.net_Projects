@@ -54,7 +54,7 @@ namespace CRUDTests
 
             _personsServiceMock
              .Setup(temp => temp.GetSortedPersons(It.IsAny<List<PersonResponse>>(), It.IsAny<string>(), It.IsAny<SortOrderOptions>()))
-             .ReturnsAsync(persons_response_list);
+             .Returns(persons_response_list);
 
             //Act
             IActionResult result = await personsController.Index(_fixture.Create<string>(), _fixture.Create<string>(), _fixture.Create<string>(), _fixture.Create<SortOrderOptions>());

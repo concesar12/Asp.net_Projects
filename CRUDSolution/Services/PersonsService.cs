@@ -120,7 +120,7 @@ namespace Services
             return persons.Select(temp => temp.ToPersonResponse()).ToList();
         }
 
-        public async Task<List<PersonResponse>> GetSortedPersons(List<PersonResponse> allPersons, string sortBy, SortOrderOptions sortOrder)
+        public List<PersonResponse> GetSortedPersons(List<PersonResponse> allPersons, string sortBy, SortOrderOptions sortOrder)
         {
             _logger.LogInformation("GetSortedPersons of PersonsService");
 

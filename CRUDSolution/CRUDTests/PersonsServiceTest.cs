@@ -381,7 +381,7 @@ namespace CRUDTests
             List<PersonResponse> allPersons = await _personService.GetAllPersons();
 
             //Act
-            List<PersonResponse> persons_list_from_sort = await _personService.GetSortedPersons(allPersons, nameof(Person.PersonName), SortOrderOptions.DESC);
+            List<PersonResponse> persons_list_from_sort = _personService.GetSortedPersons(allPersons, nameof(Person.PersonName), SortOrderOptions.DESC);
 
             //print persons_list_from_get
             _testOutputHelper.WriteLine("Actual:");
