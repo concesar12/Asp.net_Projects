@@ -22,7 +22,7 @@ namespace CRUDTests
     public class PersonsServiceTest
     {
         //private fields
-        private readonly IPersonsService _personService;
+        private readonly IPersonsGetterService _personService;
 
         private readonly IPersonsRepository _personRepository;
         private readonly ITestOutputHelper _testOutputHelper;
@@ -37,7 +37,7 @@ namespace CRUDTests
             _personRepository = _personRepositoryMock.Object;
 
             var diagnosticContextMock = new Mock<IDiagnosticContext>();
-            var loggerMock = new Mock<ILogger<PersonsService>>();
+            var loggerMock = new Mock<ILogger<PersonsAdderService>>();
             _personService = new PersonsService(_personRepository, loggerMock.Object, diagnosticContextMock.Object);
 
             _testOutputHelper = testOutputHelper;

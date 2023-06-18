@@ -22,7 +22,12 @@ namespace CRUDExample.Controllers
     public class PersonsController :Controller
     {
         //private fields from our services
-        private readonly IPersonsService _personsService;
+        private readonly IPersonsGetterService _personsGetterService;
+
+        private readonly IPersonsAdderService _personsAdderService;
+        private readonly IPersonsSorterService _personsSorterService;
+        private readonly IPersonsDeleterService _personsDeleterService;
+        private readonly IPersonsUpdaterService _personsUpdaterService;
 
         private readonly ICountriesService _countriesService;
 
@@ -30,11 +35,21 @@ namespace CRUDExample.Controllers
         private readonly ILogger<PersonsController> _logger;
 
         //Constructor
-        public PersonsController(IPersonsService personsService, ICountriesService countriesService, ILogger<PersonsController> logger)
+        public PersonsController(IPersonsGetterService personsGetterService,
+            ICountriesService countriesService,
+            ILogger<PersonsController> logger,
+            IPersonsAdderService personsAdderService,
+            IPersonsDeleterService personsDeleterService,
+            IPersonsSorterService personsSorterService,
+            IPersonsUpdaterService personsUpdaterService)
         {
-            _personsService = personsService;
+            _personsGetterService = personsGetterService;
             _countriesService = countriesService;
             _logger = logger;
+            _personsAdderService = personsAdderService;
+            _personsDeleterService = personsDeleterService;
+            _personsSorterService = personsSorterService;
+            _personsUpdaterService = personsUpdaterService;
         }
 
         //URL: persons/index
@@ -54,13 +69,13 @@ namespace CRUDExample.Controllers
             _logger.LogDebug($"searchBy: {searchBy}, searchString: {searchString}, sortBy: {sortBy}, sortOrder: {sortOrder}");
 
             //Search
-            List<PersonResponse> persons = await _personsService.GetFilteredPersons(searchBy, searchString);
+            List<PersonResponse> persons = await _personsGetterService.GetFilteredPersons(searchBy, searchString);
             //Not necessary anymore because we added in personsListFilter
             //ViewBag.CurrentSearchBy = searchBy;
             //ViewBag.CurrentSearchString = searchString;
 
             //Sort
-            List<PersonResponse> sortedPersons = _personsService.GetSortedPersons(persons, sortBy, sortOrder);
+            List<PersonResponse> sortedPersons = _personsSorterService.GetSortedPersons(persons, sortBy, sortOrder);
 
             return View(sortedPersons); //Views/Persons/Index.cshtml
         }
@@ -99,7 +114,7 @@ namespace CRUDExample.Controllers
             //}
 
             //call the service method
-            PersonResponse personResponse = await _personsService.AddPerson(personRequest);
+            PersonResponse personResponse = await _personsAdderService.AddPerson(personRequest);
 
             //navigate to Index() action method (it makes another get request to "persons/index"
             return RedirectToAction("Index", "Persons");
@@ -111,7 +126,7 @@ namespace CRUDExample.Controllers
         [Route("[action]/{personID}")] //Eg: /persons/edit/1
         public async Task<IActionResult> Edit(Guid personID)
         {
-            PersonResponse? personResponse = await _personsService.GetPersonByPersonID(personID);
+            PersonResponse? personResponse = await _personsGetterService.GetPersonByPersonID(personID);
             if (personResponse == null)
             {
                 return RedirectToAction("Index");
@@ -132,13 +147,13 @@ namespace CRUDExample.Controllers
         [TypeFilter(typeof(TokenAuthorizationFilter))]
         public async Task<IActionResult> Edit(PersonUpdateRequest personRequest)
         {
-            PersonResponse? personResponse = await _personsService.GetPersonByPersonID(personRequest.PersonID);
+            PersonResponse? personResponse = await _personsGetterService.GetPersonByPersonID(personRequest.PersonID);
 
             if (personResponse == null)
             {
                 return RedirectToAction("Index");
             }
-            PersonResponse updatedPerson = await _personsService.UpdatePerson(personRequest);
+            PersonResponse updatedPerson = await _personsUpdaterService.UpdatePerson(personRequest);
             return RedirectToAction("Index");
         }
 
@@ -146,7 +161,7 @@ namespace CRUDExample.Controllers
         [Route("[action]/{personID}")]
         public async Task<IActionResult> Delete(Guid? personID)
         {
-            PersonResponse? personResponse = await _personsService.GetPersonByPersonID(personID);
+            PersonResponse? personResponse = await _personsGetterService.GetPersonByPersonID(personID);
             if (personResponse == null)
                 return RedirectToAction("Index");
 
@@ -157,11 +172,11 @@ namespace CRUDExample.Controllers
         [Route("[action]/{personID}")]
         public async Task<IActionResult> Delete(PersonUpdateRequest personUpdateResult)
         {
-            PersonResponse? personResponse = await _personsService.GetPersonByPersonID(personUpdateResult.PersonID);
+            PersonResponse? personResponse = await _personsGetterService.GetPersonByPersonID(personUpdateResult.PersonID);
             if (personResponse == null)
                 return RedirectToAction("Index");
 
-            await _personsService.DeletePerson(personUpdateResult.PersonID);
+            await _personsDeleterService.DeletePerson(personUpdateResult.PersonID);
             return RedirectToAction("Index");
         }
 
@@ -169,7 +184,7 @@ namespace CRUDExample.Controllers
         public async Task<IActionResult> PersonsPDF()
         {
             //Get list of persons
-            List<PersonResponse> persons = await _personsService.GetAllPersons();
+            List<PersonResponse> persons = await _personsGetterService.GetAllPersons();
 
             //Return view as pdf
             return new ViewAsPdf("PersonsPDF", persons, ViewData)
@@ -182,14 +197,14 @@ namespace CRUDExample.Controllers
         [Route("PersonsCSV")]
         public async Task<IActionResult> PersonsCSV()
         {
-            MemoryStream memoryStream = await _personsService.GetPersonsCSV();
+            MemoryStream memoryStream = await _personsGetterService.GetPersonsCSV();
             return File(memoryStream, "application/octet-stream", "persons.csv");
         }
 
         [Route("PersonsExcel")]
         public async Task<IActionResult> PersonsExcel()
         {
-            MemoryStream memoryStream = await _personsService.GetPersonsExcel();
+            MemoryStream memoryStream = await _personsGetterService.GetPersonsExcel();
             return File(memoryStream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "persons.xlsx");
         }
     }
