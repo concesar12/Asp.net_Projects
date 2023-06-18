@@ -31,7 +31,7 @@ namespace Services
             _diagnosticContext = diagnosticContext;
         }
 
-        public async Task<List<PersonResponse>> GetAllPersons()
+        public virtual async Task<List<PersonResponse>> GetAllPersons()
         {
             _logger.LogInformation("GetAllPersons of PersonsService");
             //SELECT * from persons
@@ -42,7 +42,7 @@ namespace Services
             //return _db.sp_GetAllPersons().Select(temp => ConvertPersonToPersonResponse(temp)).ToList();
         }
 
-        public async Task<PersonResponse?> GetPersonByPersonID(Guid? personID)
+        public virtual async Task<PersonResponse?> GetPersonByPersonID(Guid? personID)
         {
             if (personID == null)
                 return null;
@@ -54,7 +54,7 @@ namespace Services
             return person.ToPersonResponse();
         }
 
-        public async Task<List<PersonResponse>> GetFilteredPersons(string searchBy, string? searchString)
+        public virtual async Task<List<PersonResponse>> GetFilteredPersons(string searchBy, string? searchString)
         {
             _logger.LogInformation("GetFilteredPersons of PersonsService");
             List<Person> persons;
@@ -95,7 +95,7 @@ namespace Services
             return persons.Select(temp => temp.ToPersonResponse()).ToList();
         }
 
-        public async Task<MemoryStream> GetPersonsCSV()
+        public virtual async Task<MemoryStream> GetPersonsCSV()
         {
             MemoryStream memoryStream = new MemoryStream();
             StreamWriter streamWriter = new StreamWriter(memoryStream);
@@ -140,7 +140,7 @@ namespace Services
             return memoryStream;
         }
 
-        public async Task<MemoryStream> GetPersonsExcel()
+        public virtual async Task<MemoryStream> GetPersonsExcel()
         {
             MemoryStream memoryStream = new MemoryStream();
             using (ExcelPackage excelPackage = new ExcelPackage(memoryStream)) // Excel package lets us to create worksheets
