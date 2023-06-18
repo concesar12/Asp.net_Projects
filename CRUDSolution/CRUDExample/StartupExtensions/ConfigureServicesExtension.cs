@@ -37,7 +37,8 @@ namespace CRUDExample
             services.AddScoped<ICountriesGetterService, CountriesGetterService>();
             services.AddScoped<ICountriesAdderService, CountriesAdderService>();
             //Persons
-            services.AddScoped<IPersonsGetterService, PersonsGetterService>();
+            services.AddScoped<IPersonsGetterService, PersonsGetterServiceWithFewExcelFields>();
+            services.AddScoped<PersonsGetterService, PersonsGetterService>();
             services.AddScoped<IPersonsAdderService, PersonsAdderService>();
             services.AddScoped<IPersonsUpdaterService, PersonsUpdaterService>();
             services.AddScoped<IPersonsSorterService, PersonsSorterService>();

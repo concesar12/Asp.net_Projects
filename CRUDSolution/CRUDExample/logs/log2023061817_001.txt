@@ -1,0 +1,5 @@
+2023-06-18 17:06:20.928 +12:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-18 17:06:20.938 +12:00 [INF] Hosting environment: Production
+2023-06-18 17:06:20.941 +12:00 [INF] Content root path: C:\Projects\Asp.net_Projects\CRUDSolution\CRUDExample\
+2023-06-18 17:09:33.879 +12:00 [INF] User profile is available. Using 'C:\Users\conce\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-06-18 17:09:34.002 +12:00 [INF] Now listening on: http://localhost:5136
