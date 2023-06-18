@@ -32,7 +32,11 @@ namespace CRUDExample
             //add services into IoC container
             services.AddScoped<ICountriesRepository, CountriesRepository>();
             services.AddScoped<IPersonsRepository, PersonsRepository>();
-            services.AddScoped<ICountriesService, CountriesService>();
+            //Countries
+            services.AddScoped<ICountriesUploaderService, CountriesUploaderService>();
+            services.AddScoped<ICountriesGetterService, CountriesGetterService>();
+            services.AddScoped<ICountriesAdderService, CountriesAdderService>();
+            //Persons
             services.AddScoped<IPersonsGetterService, PersonsGetterService>();
             services.AddScoped<IPersonsAdderService, PersonsAdderService>();
             services.AddScoped<IPersonsUpdaterService, PersonsUpdaterService>();

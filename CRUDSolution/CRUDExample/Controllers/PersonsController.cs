@@ -23,20 +23,20 @@ namespace CRUDExample.Controllers
     {
         //private fields from our services
         private readonly IPersonsGetterService _personsGetterService;
-
         private readonly IPersonsAdderService _personsAdderService;
         private readonly IPersonsSorterService _personsSorterService;
         private readonly IPersonsDeleterService _personsDeleterService;
         private readonly IPersonsUpdaterService _personsUpdaterService;
 
-        private readonly ICountriesService _countriesService;
+        private readonly ICountriesGetterService _countriesService;
+
 
         //Create the log
         private readonly ILogger<PersonsController> _logger;
 
         //Constructor
         public PersonsController(IPersonsGetterService personsGetterService,
-            ICountriesService countriesService,
+            ICountriesGetterService countriesService,
             ILogger<PersonsController> logger,
             IPersonsAdderService personsAdderService,
             IPersonsDeleterService personsDeleterService,

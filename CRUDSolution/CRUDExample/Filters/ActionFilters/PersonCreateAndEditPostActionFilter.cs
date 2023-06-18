@@ -10,12 +10,12 @@ namespace CRUDExample.Filters.ActionFilters
     public class PersonCreateAndEditPostActionFilter :IAsyncActionFilter
     {
         //add countries services
-        private readonly ICountriesService _countriesService;
+        private readonly ICountriesGetterService _countriesService;
 
         //Add logging for the impact of short circuiting
         private readonly ILogger<PersonCreateAndEditPostActionFilter> _logger;
 
-        public PersonCreateAndEditPostActionFilter(ICountriesService countriesService, ILogger<PersonCreateAndEditPostActionFilter> logger)
+        public PersonCreateAndEditPostActionFilter(ICountriesGetterService countriesService, ILogger<PersonCreateAndEditPostActionFilter> logger)
         {
             _countriesService = countriesService;
             _logger = logger;
